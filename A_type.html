@@ -151,7 +151,7 @@
       </div>
       <div class="btm__wrap">
         <img src="./assets/images/A_type/btm_top.png" alt="" class="graybtn btm-open" />
-        <!-- <div class="fix-btm">
+        <div class="fix-btm">
           <div class="btm-tit">
             <p>
               김우리님 4월 청구요금
@@ -168,8 +168,8 @@
             </div>
             <h4 class="right">680MB</h4>
           </div>
-        </div> -->
-        <div class="fix-btm-active">
+        </div>
+        <div class="fix-btm-active" style="display: none;">
           <div class="btm-tit">
             <img src="./assets/images/A_type/btm_title_active.png" alt="" class="btm-active-title">
             <img src="./assets/images/A_type/btm_my_btn.png" alt="" class="mybtn btm-open">
@@ -224,11 +224,11 @@
                   <img src="./assets/images/A_type/icon_arrow_black.png" alt=""  class="arrow_black"/>
                 </div>
                 <div class="apply-box">
-                  <div c>
+                  <div class="left">
                     <img src="./assets/images/A_type/emoji.png" alt="" class="emoji"/>
                     <p>계속 신청할까요?</p>
                   </div>
-                  <div>
+                  <div class="right">
                     <p>이어하기</p>
                     <img src="./assets/images/A_type/link2.png" alt="" class="link2"/>
                   </div>
@@ -236,8 +236,38 @@
               </div>
             </div>
           </div>
+          <div class="total-box">
+            <div>
+              <img src="./assets/images/A_type/total1_icon.png" alt="" class="total1_icon"/>
+              <p>가입정보</p>
+            </div>
+            <div>
+              <img src="./assets/images/A_type/total2_icon.png" alt="" class="total2_icon"/>
+              <p>회선관리</p>
+            </div>
+            <div>
+              <img src="./assets/images/A_type/total3_icon.png" alt="" class="total3_icon"/>
+              <p>문의하기</p>
+            </div>
+            <div>
+              <img src="./assets/images/A_type/total4_icon.png" alt="" class="total4_icon"/>
+              <p>나의혜택</p>
+            </div>
+          </div>
+          <div class="benefits-box box1">
+            <p class="benefits-txt">
+              <span>데이터 걱정 놉!</span>
+              기본 데이터 소진 시<br />
+              예비 데이터 3GB 지급
+            </p>
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      // 바텀시트 클릭 시 active
+      const btmBar = document.querySelector(".graybtn");
+      const btmMyBtn = document.querySelectorAll(".mybtn");
+    </script>
   </body>
 </html>
