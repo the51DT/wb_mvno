@@ -3,13 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MVNO B Type</title>
+  <title>우리은행 알뜰폰 B Type</title>
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/type_b.css">
   <link rel="stylesheet" href="./assets/css/swiper.min.css">
   <script src="./assets/js/swiper.js"></script>
 </head>
 <body>
-  
+  <div class="wrap">
+    <div class="gnb">
+      <img src="./assets/img/type_b/logo.png">
+      <img src="./assets/img/type_b/gnb.png">
+    </div>
+    <div class="main">
+      <div class="top">
+        <img src="./assets/img/type_b/top.png">
+        <img src="./assets/img/type_b/top_x.png">
+      </div>
+      <div class="login_before">
+        <img src="./assets/img/type_b/login_before.png">
+        <div class="btn_login">로그인</div>
+      </div>
+      <div class="login_after">
+        <p>안녕하세요! <span>김우리</span> 님</p>
+        <div class="use">
+          <img src="./assets/img/type_b/login_after.png">
+          <div>
+            <img src="./assets/img/type_b/login_after_1.png">
+            <img src="./assets/img/type_b/login_after_2.png">
+            <img src="./assets/img/type_b/login_after_3.png">
+          </div>
+        </div>
+        <div class="amount">
+          <p>4월 청구 금액<span>24.04.01 ~ 24.04.30</span></p>
+          <p>35,500<span> 원</span></p>
+          <div><div>청구 금액 조회</div><div>실시간 이용 요금</div></div>
+        </div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/type_b/icon_1.png">
+        <img src="./assets/img/type_b/icon_2.png">
+        <img src="./assets/img/type_b/icon_3.png">
+      </div>
+      <div class="banner">
+        <div>
+          <img src="./assets/img/type_b/banner.png">
+          <img src="./assets/img/type_b/banner_img.png">
+        </div>
+        <img src="./assets/img/type_b/banner_coin.png">
+      </div>
+    </div>
+    <div class="event">
+      <div class="free">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide on">기분좋은 봄맞이 특가</div>
+          <div class="swiper-slide">새학기 특별 할인</div>
+          <div class="swiper-slide">우리에만 있어요</div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./assets/img/type_b/product.png"></div>
+          <div class="swiper-slide"><img src="./assets/img/type_b/product.png"></div>
+          <div class="swiper-slide"><img src="./assets/img/type_b/product.png"></div>
+          <div class="swiper-slide"><img src="./assets/img/type_b/product.png"></div>
+          <div class="swiper-slide"><img src="./assets/img/type_b/product.png"></div>
+          <div class="swiper-slide"><img src="./assets/img/type_b/product.png"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var swiper = new Swiper(".free", {
+      slidesPerView : 'auto',
+      spaceBetween: 8,
+      freeMode: true,
+    });
+
+    const free_slide = document.querySelectorAll('.free .swiper-slide')
+    free_slide.forEach(el => {
+      el.addEventListener('click', ()=>{
+        for(i=0; i < free_slide.length; i++) {
+          free_slide[i].classList.remove('on')
+        }
+        el.classList.add('on')
+      })
+    });
+
+    var swiper = new Swiper(".product", {
+      slidesPerView : 'auto',
+    });
+  </script>
 </body>
 </html>
