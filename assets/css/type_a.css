@@ -1,1 +1,45 @@
 @charset "utf-8";
+.header__section,
+.banner__section {
+  padding: 0 20px;
+}
+.flx-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+img {
+  display: block;
+  width: 100%;
+}
+/* header__section */
+.header__section header {
+  padding: 12px 0;
+}
+.header__section header > img {
+  max-width: 121px;
+}
+.header__section header .nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header__section header .nav img {
+  max-width: 24px;
+}
+/* banner__section */
+.banner__section .swiper-slide.iphone {
+  padding: 38px 39px 30px 30px;
+  background: linear-gradient(-53deg, #0066ff 100%, #0033cbe5 90%, #0066ff 100%);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.banner__section .swiper-slide.iphone img.text {
+  max-width: 129px;
+  margin-top: 20px;
+}
+.banner__section .swiper-slide.iphone img.banner_img {
+  max-width: 134px;
+}

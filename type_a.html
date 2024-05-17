@@ -10,6 +10,113 @@
     <script src="./assets/js/swiper.js"></script>
   </head>
   <body>
-    다현선임님
+    <div id="wrap">
+      <section class="header__section">
+        <header class="flx-between">
+          <img src="./assets/images/typeA/logo.png" alt="" />
+          <div class="nav">
+            <img src="./assets/images/typeA/icon_alarm.png" alt="" />
+            <img src="./assets/images/typeA/icon_search.png" alt="" />
+            <img src="./assets/images/typeA/icon_menu.png" alt="" />
+          </div>
+        </header>
+      </section>
+
+      <section class="banner__section">
+        <div class="banner__wrap">
+          <div class="swiper-container swiper-banner">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide flx-between iphone">
+                <img src="./assets/images/typeA/banner01_left.png" alt="" class="text" />
+                <img src="./assets/images/typeA/banner01_right.png" alt="" class="banner_img" />
+              </div>
+              <div class="swiper-slide flx-between iphone">
+                <img src="./assets/images/typeA/banner01_left.png" alt="" class="text" />
+                <img src="./assets/images/typeA/banner01_right.png" alt="" class="banner_img" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <!-- <div class="flx-between">
+            <div class="left">
+              <img src="./assets/images/typeA/find_text.png" alt="" />
+              <img src="./assets/images/typeA/find_btn.png" alt="" />
+            </div>
+            <div class="right">
+              <img src="./assets/images/typeA/find_bee.png" alt="" />
+            </div>
+          </div>
+        </div> -->
+      </section>
+      <!-- 
+      <section class="recommend__section">
+        <div class="recommend__wrap">
+          <div class="flx-between">
+            <img src="./assets/images/typeA/recommend_title.png" alt="" />
+            <img src="./assets/images/typeA/recommend_total_btn.png" alt="" />
+          </div>
+          <div class="radio-box">
+            <label>
+              <input type="radio" id="select_recommend" name="fare" value="type01" checked />
+              <p class="chk_item">기분좋은 봄맞이 특가</p>
+            </label>
+            <label>
+              <input type="radio" id="select_recommend" name="fare" value="type01" />
+              <p class="chk_item">이벤트</p>
+            </label>
+            <label>
+              <input type="radio" id="select_recommend" name="fare" value="type01" />
+              <p class="chk_item">5월 인기 요금제</p>
+            </label>
+            <label>
+              <input type="radio" id="select_recommend" name="fare" value="type01" />
+              <p class="chk_item">유심 신청</p>
+            </label>
+            <label>
+              <input type="radio" id="select_recommend" name="fare" value="type01" />
+              <p class="chk_item">멤버십 혜택</p>
+            </label>
+            <label>
+              <input type="radio" id="select_recommend" name="fare" value="type01" />
+              <p class="chk_item">LGU+망</p>
+            </label>
+            <label>
+              <input type="radio" id="select_recommend" name="fare" value="type01" />
+              <p class="chk_item">지금 인기</p>
+            </label>
+            <label>
+              <input type="radio" id="select_recommend" name="fare" value="type01" />
+              <p class="chk_item">신규</p>
+            </label>
+            <label>
+              <input type="radio" id="select_recommend" name="fare" value="type01" />
+              <p class="chk_item">데이터 많은</p>
+            </label>
+            <label>
+              <input type="radio" id="select_recommend" name="fare" value="type01" />
+              <p class="chk_item">데이터+통화 무제한</p>
+            </label>
+            <button type="button" class="btn">
+              <img src="./assets/images/typeA/icon_arrow.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </section> -->
+    </div>
+    <script>
+      var banner = new Swiper(".swiper-banner", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        // autoplay: {
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // },
+        // loop: true,
+      });
+    </script>
   </body>
 </html>
