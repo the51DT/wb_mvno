@@ -100,60 +100,55 @@ header .logo.on , header .menu.on {
   background: linear-gradient(90deg, #1e93ff 100%, #47a7ff 100%);
 }
 .type__container .type-box.box1 > img {
-  max-width: 254px;
+  max-width: 230px;
   position: absolute;
   top: 30%;
-  right: -4%;
-  right: 0;
+  right: -20px;
 }
 .type__container .type-box.box2 {
   background: #ff8e0a;
 }
 .type__container .type-box.box2 > img {
-  max-width: 252px;
+  max-width: 230px;
   position: absolute;
   top: 45%;
-  right: 0;
+  right: -20px;
 }
 .type__container .type-box.box3 {
   background: #e9418f;
 }
 .type__container .type-box.box3 > img {
-  max-width: 226px;
+  max-width: 200px;
   position: absolute;
   top: 50%;
-  right: -3%;
-  right: 0;
+  right: -20px;
 }
 .type__container .type-box.box4 {
   background: #0fc141;
 }
 .type__container .type-box.box4 > img {
-  max-width: 224px;
+  max-width: 220px;
   position: absolute;
   top: 43%;
-  right: -4%;
-  right: 0;
+  right: -20px;
 }
 .type__container .type-box.box5 {
   background: #571b89;
 }
 .type__container .type-box.box5 > img {
-  max-width: 221px;
+  max-width: 205px;
   position: absolute;
   top: 50%;
-  right: -4.8%;
-  right: 0;
+  right: -20px;
 }
 .type__container .type-box.box6 {
   background: #0ecce6;
 }
 .type__container .type-box.box6 > img {
-  max-width: 239px;
+  max-width: 220px;
   position: absolute;
   top: 52%;
-  right: -3%;
-  right: 0;
+  right: -20px;
 }
 .type__container .type-txt {
   display: flex;
@@ -735,7 +730,7 @@ header .logo.on , header .menu.on {
   display: block;
   position: fixed;
   bottom: 40px;
-  left: 30%;
+  left: 25%;
   z-index: 9;
 }
 .qna {
