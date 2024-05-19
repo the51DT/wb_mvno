@@ -26,9 +26,17 @@ header .menu {
 header.on {
   background-color: #fff;
   width:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 12px 20px 12.74px;
+  z-index: 20;
 }
 header .logo.on , header .menu.on {
   display: none;
+}
+.alarm-fixed.on {
+  background-color: #2865DA;
 }
 .alarm-box {
   padding: 10.29px 21.27px 10.29px 18px;
@@ -41,8 +49,11 @@ header .logo.on , header .menu.on {
   height: 48px;
 }
 .alarm-box.sticky {
-  position: sticky;
+  position: fixed;
   top: 0;
+  z-index: 20; 
+  width: 90%;
+  margin-top: 0;
 }
 .alarm-box .alarm-title {
   display: flex;

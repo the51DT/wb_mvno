@@ -21,12 +21,14 @@
         <img src="./assets/images/A_type/logo2.png" alt="" class="logo" />
         <img src="./assets/images/A_type/icon_menu2.png" alt="" class="menu" />
       </header> -->
-      <div class="alarm-box">
+      <div class="alarm-fixed">
+        <div class="alarm-box">
         <div class="alarm-title">
           <img src="./assets/images/A_type/alarm.png" alt="" class="alarm" />
           <span>금주의 TOP 10 요금제!</span>
         </div>
         <img src="./assets/images/A_type/icon_arrow.png" alt="" class="icon-arrow" />
+        </div>
       </div>
       <div class="type__container">
         <div class="type-title">
@@ -312,16 +314,12 @@
         // 스크롤 내릴 때
         alarmBox.classList.add('sticky');
         btmWrap.style.display = 'none';
-        if (scrollTop > 100) {
-          header.classList.add('on');
-        }
+        header.classList.remove('on');
       } else {
         // 스크롤 올릴 때
         alarmBox.classList.remove('sticky');
         btmWrap.style.display = 'block';
-        if (scrollTop <= 100) {
-          header.classList.remove('on');
-        }
+        header.classList.add('on');
       }
 
       if (scrollTop === 0) {
@@ -343,7 +341,7 @@
         if (scrollTop + windowHeight < documentHeight) {
           btmWrap.style.display = 'block';
         }
-      }, 1100);
+      }, 1050);
 
     });
   </script>
