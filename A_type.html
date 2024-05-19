@@ -300,6 +300,7 @@
     const header = document.querySelector('header');
     const alarmBox = document.querySelector('.alarm-box');
     const btmWrap = document.querySelector('.btm__wrap');
+    const qnaBox = document.querySelector('.qna-box');
     let scrollTimeout;
 
     window.addEventListener('scroll', () => {
@@ -315,11 +316,13 @@
         alarmBox.classList.add('sticky');
         btmWrap.style.display = 'none';
         header.classList.remove('on');
+        qnaBox.classList.add('on');
       } else {
         // 스크롤 올릴 때
         alarmBox.classList.remove('sticky');
         btmWrap.style.display = 'block';
         header.classList.add('on');
+        qnaBox.classList.remove('on');
       }
 
       if (scrollTop === 0) {
@@ -328,8 +331,6 @@
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 
-      console.log(scrollTop + windowHeight);
-      console.log(documentHeight);
       if (scrollTop + windowHeight >= document.body.scrollHeight) {
         btmWrap.style.display = 'block';
       }

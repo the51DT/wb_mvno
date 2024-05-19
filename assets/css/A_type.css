@@ -728,16 +728,22 @@ header .logo.on , header .menu.on {
 .btm__wrap .fix-btm-active .benefits-box.box1 {
   margin-top:40px ;
 }
-.qna-box {
-  display: none;
-}
 .qna-box.on {
   margin: 0 auto;
   width: 189px;
+  max-width: 189px;
+  display: block;
+  position: fixed;
+  bottom: 40px;
+  left: 30%;
+  z-index: 9;
 }
 .qna {
+  margin: 0 auto;
+  width: 189px;
   max-width: 189px;
-  position: absolute;
-  bottom: calc(100% - 40px);
-  display: flex;
+  display: block;
+  position: fixed;
+  bottom: 40px;
+  z-index: -1;
 }
