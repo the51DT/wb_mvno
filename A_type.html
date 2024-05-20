@@ -374,10 +374,6 @@
         header3.style.display = "none";
         header1.style.display = "flex";
         newBeeBtn.classList.remove("on");
-        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop || location >= box2.offsetTop) {
-          // 스크롤이 맨 아래에 도달했을 때
-          btmWrap.style.display = "block";
-        }
       } else {
         // 스크롤 올릴 때
         btmWrap.style.display = "block";
@@ -397,12 +393,17 @@
       if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop || location >= box2.offsetTop) {
         // 스크롤이 맨 아래에 도달했을 때
         btmWrap.style.display = "block";
+        console.log(box4.offsetTop);
       }
 
-      // if (location >= blind.offsetTop) {
-      //   // blind의 위치에 도달했을 때
-      //   btmWrap.style.display = "block";
-      // }
+      // 스크롤 멈춤 감지
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        // 스크롤이 맨 아래에 도달하지 않은 경우에만 실행
+        if (isScrollAtBottom) {
+          btmWrap.style.display = "block";
+        }
+      }, 0);
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
