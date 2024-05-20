@@ -226,7 +226,7 @@ section.wrap.box04 {
   bottom: 0;
   top: -4rem;
   height: 6.25rem;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
