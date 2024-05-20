@@ -70,13 +70,41 @@ section.wrap.box01 {
   border-radius: 0;
   background: none;
   margin-bottom: 30px;
+  position: relative;
+
+  margin: 0 20px 30px;
+  background-color: #4db4ff;
+  border-radius: 18px;
+  display: flex;
+  border-radius: 18px;
+}
+
+section.wrap.box01 p {
+  color: #fff;
 }
 
 section.wrap.box01 .left {
 }
 
-section.wrap.box01 img {
+section.wrap.box01 p img {
+  width: 20px;
+}
+
+section.wrap.box01 .l {
+  margin: 26px 0;
+}
+
+section.wrap.box01 .l p:nth-child(2) {
+  margin-top: 10px;
+}
+
+section.wrap.box01 .r {
+  margin-left: auto;
+}
+section.wrap.box01 .r img {
+  object-fit: contain;
   width: 100%;
+  max-height: 100px;
 }
 
 /*  padding: 1.625rem 1.25rem 0;
@@ -562,6 +590,10 @@ section.wrap.boxFixed.active .activedwrap {
   line-height: 20px;
   letter-spacing: -0.39px;
   margin-left: 8px;
+}
+
+.wrap-pay .btn-wrap .btn-l {
+  margin-left: 0;
 }
 
 .wrap-pay .btn-wrap .btn-l span,
