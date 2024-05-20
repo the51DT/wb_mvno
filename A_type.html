@@ -374,7 +374,8 @@
         header3.style.display = "none";
         header1.style.display = "flex";
         newBeeBtn.classList.remove("on");
-      } else {
+      } else if (scrollTop < lastScrollTop) {
+        console.log("dd");
         // 스크롤 올릴 때
         btmWrap.style.display = "block";
         header3.style.display = "none";
@@ -390,7 +391,7 @@
         newBeeBtn.classList.remove("on");
       }
 
-      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop || location >= box2.offsetTop) {
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop) {
         // 스크롤이 맨 아래에 도달했을 때
         btmWrap.style.display = "block";
         console.log(box4.offsetTop);
@@ -400,7 +401,7 @@
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         // 스크롤이 맨 아래에 도달하지 않은 경우에만 실행
-        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop || location >= box2.offsetTop) {
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop) {
           btmWrap.style.display = "block";
         }
       }, 0);
