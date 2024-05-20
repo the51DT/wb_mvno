@@ -357,6 +357,7 @@
     const blind = document.querySelector(".blind");
     const box4 = document.querySelector(".benefits-box.box4");
     const box2 = document.querySelector(".benefits-box.box2");
+    const box1 = document.querySelector(".benefits-box.box1");
     let scrollBefore = document.documentElement.scrollHeight;
     let scrollTimeout;
 
@@ -391,14 +392,16 @@
         newBeeBtn.classList.remove("on");
       }
 
-      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop) {
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box1.offsetTop) {
         // 스크롤이 맨 아래에 도달했을 때
         btmWrap.style.display = "block";
+        console.log(box1.offsetTop);
       }
 
+      // 스크롤 멈춤 감지
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        if (location >= box4.offsetTop) {
+        if (location >= box1.offsetTop) {
           btmWrap.style.display = "block";
         }
       }, 0);
