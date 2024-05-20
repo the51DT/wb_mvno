@@ -731,5 +731,13 @@ header.show {
   transform: translateX(-50%);
 }
 .qna-box.on {
+  margin: 0 auto;
+  width: 189px;
+  max-width: 189px;
+  display: block;
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 9;
 }
