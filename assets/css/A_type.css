@@ -718,16 +718,7 @@ header.show {
 .btm__wrap .fix-btm-active .benefits-box.box1 {
   margin-top: 40px;
 }
-.qna-box.on {
-  margin: 0 auto;
-  width: 189px;
-  max-width: 189px;
-  display: block;
-  position: fixed;
-  bottom: 40px;
-  left: 25%;
-  z-index: 9;
-}
+
 .qna {
   margin: 0 auto;
   width: 189px;
@@ -736,4 +727,9 @@ header.show {
   position: fixed;
   bottom: 40px;
   z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.qna-box.on {
+  z-index: 9;
 }
