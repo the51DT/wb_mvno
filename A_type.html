@@ -356,7 +356,7 @@
     const newBeeBtn = document.querySelector(".scroll-case");
     const blind = document.querySelector(".blind");
     const box4 = document.querySelector(".benefits-box.box4");
-
+    let scrollBefore = document.documentElement.scrollHeight;
     let scrollTimeout;
 
     window.addEventListener("scroll", () => {
@@ -389,7 +389,7 @@
         newBeeBtn.classList.remove("on");
       }
 
-      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= blind.offsetTop) {
+      if (window.scrollY + window.innerHeight >= scrollBefore) {
         // 스크롤이 맨 아래에 도달했을 때
         btmWrap.style.display = "block";
       }
