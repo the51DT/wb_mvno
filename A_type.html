@@ -390,14 +390,13 @@
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 
-      // 스크롤 멈춤 감지
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        // 스크롤이 맨 아래에 도달하지 않은 경우에만 실행
-        if (isScrollAtBottom) {
-          btmWrap.style.display = "block";
-        }
-      }, 0);
+      // // 스크롤 멈춤 감지
+      // clearTimeout(scrollTimeout);
+      // scrollTimeout = setTimeout(() => {
+      //   if (isScrollAtBottom) {
+      //     btmWrap.style.display = "block";
+      //   }
+      // }, 0);
     });
 
     const modal = document.getElementById("modal");
