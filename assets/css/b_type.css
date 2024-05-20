@@ -70,13 +70,45 @@ section.wrap.box01 {
   border-radius: 0;
   background: none;
   margin-bottom: 30px;
+  position: relative;
+
+  margin: 0 20px 30px;
+  background-color: #4db4ff;
+  border-radius: 18px;
+  display: flex;
+  border-radius: 18px;
+  align-items: center;
+}
+
+section.wrap.box01 p {
+  color: #fff;
 }
 
 section.wrap.box01 .left {
 }
 
-section.wrap.box01 img {
+section.wrap.box01 p img {
+  width: 20px;
+}
+
+section.wrap.box01 .l {
+  margin: 26px 0;
+}
+
+section.wrap.box01 .l p:nth-child(2) {
+  margin-top: 10px;
+}
+
+section.wrap.box01 .r {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.wrap.box01 .r img {
+  object-fit: contain;
   width: 100%;
+  max-height: 100px;
 }
 
 /*  padding: 1.625rem 1.25rem 0;
@@ -109,6 +141,9 @@ section.wrap.box02 img {
 }
 section.wrap.box02 img:first-child {
   margin-right: -10px;
+}
+section.wrap.box02 img:last-child {
+  margin-left: -0.8rem;
 }
 h1.h-24 {
   font-size: 1.5rem;
@@ -189,6 +224,7 @@ section.wrap.box03 .plan-wrap span.label {
   width: 100%;
 }
 
+/* 데이터 유형별 추천 요금제(파란색) 스와이퍼 */
 .swiper-container.custom {
   position: relative;
 }
@@ -212,11 +248,27 @@ section.wrap.box03 .plan-wrap span.label {
   object-fit: contain;
 }
 
+.swiper-container.custom .custom-bullet img {
+  max-width: 98px;
+  width: 100%;
+  height: 50px;
+}
+
 /* 04 */
+/* 제휴카드 발급받고 할인혜택 박스 */
+
 section.wrap.box04 {
   background-color: var(--blue);
   height: 37.875rem;
   border-radius: 0;
+}
+
+section.wrap.box04 h2.boxtit {
+  font-size: 1.5rem;
+  padding-top: 3.75rem;
+  padding-bottom: 1.25rem;
+  text-align: center;
+  color: #fff;
 }
 
 .swiper-container.custom.swiper-horizontal > .swiper-pagination-bullets,
@@ -226,7 +278,7 @@ section.wrap.box04 {
   bottom: 0;
   top: -4rem;
   height: 6.25rem;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -251,6 +303,8 @@ section.wrap.box04 {
 }
 
 /*05*/
+/*          제휴카드 발급받고 <br />
+          할인 혜택 받아보세요*/
 
 section.wrap.box05 {
   margin: 21px 20px 50px;
@@ -321,7 +375,6 @@ section.wrap.box05 .fff.round {
 }
 
 /* 06 */
-
 section.wrap.box06 {
   background: none;
   width: 100%;
@@ -373,6 +426,7 @@ section.wrap.box06 .benefit-wrap .txt span:last-child {
   margin-top: 2px;
 }
 
+/************* 바텀 시트 **************/
 /* fixed box */
 section.wrap.boxFixed {
   position: fixed;
@@ -381,18 +435,20 @@ section.wrap.boxFixed {
   height: 10.125rem;
   margin: 0;
   width: 100%;
-
   border-radius: 1rem;
   z-index: 999;
 }
+
 section.wrap.boxFixed .beforewrap.hide {
   display: none;
 }
+
 section.wrap.boxFixed .beforewrap {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 section.wrap.boxFixed .top .tit-wrap {
   display: flex;
   align-items: center;
@@ -444,6 +500,13 @@ section.wrap.boxFixed .right img {
   width: 100%;
 }
 
+.btnmy {
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  max-width: 40px;
+}
+
 /* after triggered */
 section.wrap.boxFixed.active {
   bottom: -56px;
@@ -451,11 +514,29 @@ section.wrap.boxFixed.active {
   overflow-y: auto;
   transition: all 0.3s ease-out;
 }
+
 section.wrap.boxFixed.active .activedwrap {
   display: block;
 }
+.activedwrap {
+  padding: 0;
+}
+.activedwrap .imgwrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
+.activedwrap .recipt-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.activedwrap .recipt-wrap img {
+  width: 100%;
+  object-fit: contain;
+}
 
-/* triggered abt status */
+/* triggered status */
 .hide {
   display: none;
 }
@@ -463,9 +544,9 @@ section.wrap.boxFixed.active .activedwrap {
 .activedwrap {
   display: none;
 }
-
 /**/
 
+/* 나의 요금제 */
 .wrap-pay .box {
   display: flex;
   margin-bottom: 0.875rem;
@@ -485,8 +566,8 @@ section.wrap.boxFixed.active .activedwrap {
   width: 100%;
   max-width: 15.188rem;
 }
-
 /**/
+
 .wrap-pay {
   margin-top: 21px;
 }
@@ -507,14 +588,16 @@ section.wrap.boxFixed.active .activedwrap {
   width: 45%;
   height: 40px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 50px;
   font-size: 13px;
   font-weight: 600;
   line-height: 20px;
   letter-spacing: -0.39px;
   margin-left: 8px;
+}
+
+.wrap-pay .btn-wrap .btn-l {
+  margin-left: 0;
 }
 
 .wrap-pay .btn-wrap .btn-l span,
@@ -539,106 +622,21 @@ section.wrap.boxFixed.active .activedwrap {
 .wrap-pay:last-child {
   margin-bottom: 50px;
 }
-
 /**/
-img.img-bar {
-  margin-top: 0.594rem;
-}
 
-img.activedimg {
+.wrap-pay img.activedimg {
   width: 100%;
 }
 
-.activeswiper .swiper-wrapper .swiper-slide img {
-  width: 100%;
+/* */
+/* 바텀시트: 나의 요금제 */
+section.wrap.boxFixed .myplan h2.wrappay-tit {
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
-
-.activeswiper.swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal {
-  width: 1.813rem;
-  bottom: 0;
-  margin-left: 1.25rem;
-  margin-bottom: 1.875rem;
-  height: 0.313rem; /* 5px */
-}
-
-/* el*/
-.btn-more {
-  width: 4.75rem;
-  height: 2.25rem;
-  margin: 0 auto 13.25rem;
-  display: block;
-}
-
-.btn-more.first {
-  padding: 1.313rem 0 1.875rem;
-}
-
-/* 더보기버튼 * /
-/* el*/
-.btn.moreblue {
-  padding: 8px 20px 8px 20px;
-  margin: 21px auto 0;
-  color: #237bff;
-  border: 1px solid #237bff;
-  background-color: #fff;
-  border-radius: 50px;
-  font-weight: 600;
-  height: 36px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-}
-
-.btn-more.first {
-  padding: 1.313rem 0 1.875rem;
-}
-
-/* 액티브: 나의 요금제 */
-
-.wrap-pay.myplan .inner {
-  border-radius: 18px;
-}
-
-/* 제휴혜택받아보고 할인혜택받아보세요 */
-
-.swiper-container.custom .custom-bullet img {
-  max-width: 98px;
-  width: 100%;
-  height: 50px;
-}
-
-.btnmy {
-  width: 40px;
-  height: 40px;
-  margin-top: 10px;
-  max-width: 40px;
-}
-
-.activedwrap {
-  padding: 0;
-}
-
-.activedwrap .imgwrap {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: top;
-}
-.activedwrap .recipt-wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
-.activedwrap .recipt-wrap img {
-  width: 100%;
-  object-fit: contain;
-}
-
 section.wrap.boxFixed .myplan .inner .right {
   padding: 0;
-}
-
-section.wrap.boxFixed .myplan .inner .right .top h3:first-child {
 }
 section.wrap.boxFixed .myplan .inner .right .top h3 {
   font-size: 13px;
@@ -666,12 +664,49 @@ section.wrap.boxFixed .myplan .inner .box .right .top span:before {
 section.wrap.boxFixed .myplan .inner .box .right .top h3:last-child {
   margin-left: auto;
 }
-
 section.wrap.boxFixed .myplan .inner .box .right .btm {
   width: 100%;
 }
-/* progress bar */
+/**/
 
+/* 바텀시트 최하단 스와이퍼 */
+.activeswiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+}
+
+.activeswiper.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: 1.813rem;
+  bottom: 0;
+  margin-left: 1.25rem;
+  margin-bottom: 1.875rem;
+  height: 0.313rem; /* 5px */
+}
+
+/* 더보기 버튼 */
+.btn.moreblue {
+  padding: 8px 20px 8px 20px;
+  margin: 21px auto 0;
+  color: #237bff;
+  border: 1px solid #237bff;
+  background-color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  height: 36px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-more.first {
+  padding: 1.313rem 0 1.875rem;
+}
+
+.wrap-pay.myplan .inner {
+  border-radius: 18px;
+}
+
+/* progress bar */
 progress {
   display: block;
   width: 100%;
@@ -683,8 +718,6 @@ progress {
   border-radius: 50px;
   text-align: left;
   position: relative;
-  font-family: "Helvetica Neue", arial, sans-serif;
-  font-size: 15px;
 }
 progress::-webkit-progress-bar {
   height: 6px;
@@ -720,16 +753,12 @@ progress:after {
 }
 
 /* benefit */
-
-.benefits__container {
+.benefit-con {
   /* margin-top: 113.09px;*/
   padding-bottom: 222px;
   color: #fff;
 }
-.benefits__container .benefits-title {
-  max-width: 258px;
-}
-.benenfits__wrap {
+.benenfit-wrap {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -760,7 +789,6 @@ progress:after {
   letter-spacing: -0.65px;
   font-weight: 400;
 }
-
 .benefits-box.box1 {
   background-color: #333ab2;
 }
