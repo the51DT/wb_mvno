@@ -394,14 +394,11 @@
       if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop) {
         // 스크롤이 맨 아래에 도달했을 때
         btmWrap.style.display = "block";
-        console.log(box4.offsetTop);
       }
 
-      // 스크롤 멈춤 감지
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        // 스크롤이 맨 아래에 도달하지 않은 경우에만 실행
-        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop) {
+        if (location >= box4.offsetTop) {
           btmWrap.style.display = "block";
         }
       }, 0);
