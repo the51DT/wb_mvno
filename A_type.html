@@ -272,12 +272,31 @@
         </div>
       </div>
     </div>
-    <div class="scroll-case">
+    <a class="scroll-case" href="#modal">
       <img src="./assets/images/A_type/scrolltop_btn.png" alt="" class="scrolltop_btn" />
+    </a>
+    <div class="modalBox" id="modal">
+      <div class="small-cirlce">
+        <!-- <img src="./assets/images/A_type/modal_eachbtn.png" alt="" class="w444" /> -->
+        <!-- <img src="./assets/images/A_type/modal_1.png" alt="" class="modal_logo modal_logo1" />
+        <img src="./assets/images/A_type/modal_2.png" alt="" class="modal_logo modal_logo2" />
+        <img src="./assets/images/A_type/modal_3.png" alt="" class="modal_logo modal_logo3" />
+        <img src="./assets/images/A_type/modal_4.png" alt="" class="modal_logo modal_logo4" />
+        <img src="./assets/images/A_type/modal_5.png" alt="" class="modal_logo modal_logo5" /> -->
+        <img src="./assets/images/A_type/3.png" alt="" class="modal_logo modal_logo1" />
+        <img src="./assets/images/A_type/2.png" alt="" class="modal_logo modal_logo2" />
+        <img src="./assets/images/A_type/1.png" alt="" class="modal_logo modal_logo3" />
+        <img src="./assets/images/A_type/4.png" alt="" class="modal_logo modal_logo4" />
+        <img src="./assets/images/A_type/5.png" alt="" class="modal_logo modal_logo5" />
+        <img src="./assets/images/A_type/bg_3.png" alt="" class="modal_bg" />
+        <div class="modal-close"></div>
+        <!-- <img src="./assets/images/A_type/ion_close-outline.png" alt="" class="modal-close" /> -->
+      </div>
     </div>
-    <div class="qna-box">
+    <div class="dimmed"></div>
+    <!-- <div class="qna-box">
       <img src="./assets/images/A_type/qna.png" alt="" class="qna" />
-    </div>
+    </div> -->
   </body>
   <script>
     // 바텀시트 클릭 시 active
@@ -332,7 +351,6 @@
     const headerLogo = document.querySelector("header .logo");
     const headerMenu = document.querySelector("header .menu");
     const btmWrap = document.querySelector(".btm__wrap");
-    const qnaBox = document.querySelector(".qna-box");
     const fixBtmActive2 = document.querySelector(".fix-btm-active");
     const newBeeBtn = document.querySelector(".scroll-case");
 
@@ -349,7 +367,6 @@
         header2.style.display = "none";
         header3.style.display = "none";
         header1.style.display = "flex";
-        qnaBox.classList.add("on");
         newBeeBtn.classList.remove("on");
       } else {
         // 스크롤 올릴 때
@@ -373,14 +390,30 @@
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 
-      // 스크롤 멈춤 감지
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        // 스크롤이 맨 아래에 도달하지 않은 경우에만 실행
-        if (scrollTop + windowHeight < documentHeight) {
-          btmWrap.style.display = "block";
-        }
-      }, 1050);
+      // // 스크롤 멈춤 감지
+      // clearTimeout(scrollTimeout);
+      // scrollTimeout = setTimeout(() => {
+      //   if (isScrollAtBottom) {
+      //     btmWrap.style.display = "block";
+      //   }
+      // }, 0);
+    });
+
+    const modal = document.getElementById("modal");
+    const dimmed = document.querySelector(".dimmed");
+    const modalClose = document.querySelector(".modal-close");
+    const scrollCase = document.querySelector(".scroll-case");
+
+    scrollCase.addEventListener("click", () => {
+      modal.classList.add("active");
+      dimmed.style.display = "block";
+      document.body.style.overflowY = "hidden";
+    });
+
+    modalClose.addEventListener("click", () => {
+      modal.classList.remove("active");
+      dimmed.style.display = "none";
+      document.body.style.overflowY = "scroll";
     });
   </script>
 </html>
