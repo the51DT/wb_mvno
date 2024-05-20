@@ -10,7 +10,6 @@ body {
 main {
   background: var(--skyblue);
   font-size: 16px;
-  margin-top: 3.688rem;
   margin-left: auto;
   width: 100%;
   max-width: 100%;
@@ -447,9 +446,10 @@ section.wrap.boxFixed .right img {
 
 /* after triggered */
 section.wrap.boxFixed.active {
-  top: 120px; /* nav1 + nav = 115px*/
-  height: auto;
+  bottom: -56px;
+  height: 100%;
   overflow-y: auto;
+  transition: all 0.3s ease-out;
 }
 section.wrap.boxFixed.active .activedwrap {
   display: block;
