@@ -119,6 +119,7 @@ h1.h-24 {
 
 section.wrap.box03 {
   margin: 0 20px;
+  box-shadow: 4px 4px 16px 0px #0c418f1a;
 }
 
 section.wrap.box03 .swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -164,6 +165,7 @@ section.wrap.box03 .plan-wrap .inner .box01 {
 }
 
 section.wrap.box03 .plan-wrap span.label {
+  font-size: 13px;
 }
 
 /*swiper*/
@@ -247,6 +249,7 @@ section.wrap.box04 {
 
 section.wrap.box05 {
   margin: 21px 20px 50px;
+  box-shadow: 4px 4px 16px 0px #0c418f1a;
 }
 section.wrap.box05 h3 {
   font-size: 10px;
@@ -565,7 +568,7 @@ img.activedimg {
 /* el*/
 .btn.moreblue {
   padding: 8px 20px 8px 20px;
-  margin: 21px auto 30px;
+  margin: 21px auto 0;
   color: #237bff;
   border: 1px solid #237bff;
   background-color: #fff;
@@ -626,9 +629,10 @@ section.wrap.boxFixed .myplan .inner .right {
 }
 
 section.wrap.boxFixed .myplan .inner .right .top h3:first-child {
-  width: 75px;
 }
-
+section.wrap.boxFixed .myplan .inner .right .top h3 {
+  font-size: 13px;
+}
 section.wrap.boxFixed .myplan .inner .box {
   margin: 0 0 14px;
 }
@@ -641,6 +645,7 @@ section.wrap.boxFixed .myplan .inner .box .right .top span {
   color: #666;
   position: relative;
   margin-left: 14px;
+  font-size: 13px;
 }
 section.wrap.boxFixed .myplan .inner .box .right .top span:before {
   content: "|";
