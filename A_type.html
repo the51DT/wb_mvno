@@ -301,6 +301,7 @@
           fixBtmActive.style.display = "block";
           btmWrap.classList.add("full");
           document.body.style.overflowY = "hidden";
+
           header1.style.display = "none";
           header2.style.display = "none";
           header3.style.display = "flex";
@@ -314,9 +315,9 @@
     const header1 = document.getElementById("header1");
     const header2 = document.getElementById("header2");
     const header3 = document.getElementById("header3");
+    const wrap = document.getElementById("wrap");
     const headerLogo = document.querySelector("header .logo");
     const headerMenu = document.querySelector("header .menu");
-    const alarmBox = document.querySelector(".alarm-box");
     const btmWrap = document.querySelector(".btm__wrap");
     const qnaBox = document.querySelector(".qna-box");
     const fixBtmActive2 = document.querySelector(".fix-btm-active");
@@ -334,6 +335,11 @@
         header1.style.display = "none";
         header2.style.display = "none";
         header3.style.display = "none";
+        if (btmWrap.classList.contains("full")) {
+          header1.style.display = "none";
+          header2.style.display = "none";
+          header3.style.display = "none";
+        }
       } else if (scrollTop > lastScrollTop) {
         // 스크롤 내릴 때
         btmWrap.style.display = "none";
@@ -345,7 +351,7 @@
         // 스크롤 올릴 때
         btmWrap.style.display = "block";
         qnaBox.classList.remove("on");
-
+        // 바텀시트 클릭 시 header 활성화 요소
         if (btmWrap.classList.contains("full")) {
           header1.style.display = "none";
           header2.style.display = "none";
@@ -365,7 +371,7 @@
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 
-      if (scrollTop + windowHeight >= document.body.scrollHeight) {
+      if (scrollTop + windowHeight >= documentHeight) {
         btmWrap.style.display = "block";
       }
 
