@@ -122,6 +122,12 @@ section.wrap.box03 {
   box-shadow: 4px 4px 16px 0px #0c418f1a;
 }
 
+section.wrap.box03 .swiper-planPagi-wrap {
+  width: fit-content;
+  display: flex;
+  margin-top: 20px;
+}
+
 section.wrap.box03 .swiper-pagination-bullets.swiper-pagination-horizontal {
   width: 100%;
   height: auto;
@@ -791,7 +797,6 @@ progress:after {
   bottom: 15.66px;
   right: 42.16px;
   transform: rotate(15deg);
-  box-shadow: 30px 30px 40px 0px rgba(0, 0, 0, 0.15);
 }
 .benefits-box.box4::after {
   position: absolute;
