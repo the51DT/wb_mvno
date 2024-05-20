@@ -307,6 +307,7 @@
     before.addEventListener('click', ()=>{
       before.style.display = 'none'
       after.style.display = 'block'
+      after.classList.add('on')
       wrap.style.padding = '0 0 145px 0'
       notice.style.display = 'flex'
     })
@@ -358,13 +359,20 @@
     
     const my_btn = document.querySelector('.my_btn')
     const my_close = document.querySelector('.my_close')
+    const indicator = document.querySelector('.indicator')
     const my = document.querySelector('.my')
     const body = document.querySelector('body')
     my_btn.addEventListener('click', ()=>{
-      my.style.display = 'block'
-      body.style.overflowY = "hidden";
+      if(after.classList.contains('on')){
+        my.style.display = 'block'
+        body.style.overflowY = "hidden";
+      }
     })
     my_close.addEventListener('click', ()=>{
+      my.style.display = 'none'
+      body.style.overflowY = "scroll";
+    })
+    indicator.addEventListener('click', ()=>{
       my.style.display = 'none'
       body.style.overflowY = "scroll";
     })
