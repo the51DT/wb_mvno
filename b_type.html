@@ -268,7 +268,7 @@
               </div>
             </div>
 
-            <div style="width: fit-content; display: flex">
+            <div class="swiper-planPagi-wrap">
               <div class="swiper-pagination"></div>
             </div>
           </div>
@@ -319,9 +319,9 @@
         <section class="wrap box05">
           <div
             class="fff round"
-            style="padding-bottom: 1.313rem; padding-top: 1.875rem"
+            style="padding-bottom: 0; padding-top: 1.875rem"
           >
-            <div>
+            <div style="padding-bottom: 30px">
               <div class="cardlist-wrap box1">
                 <img src="./assets/img-b/card1.png" class="cardlistimg" />
                 <div class="right">
@@ -439,7 +439,11 @@
               <p class="num">18,043원</p>
             </div>
             <div class="right">
-              <img src="./assets/img-b/btn-my.png" class="btnmy" />
+              <img
+                src="./assets/img-b/btn-my.png"
+                class="btnmy"
+                onclick="Trigger()"
+              />
             </div>
           </div>
 
@@ -546,7 +550,7 @@
                     <h3>잔여 MMS</h3>
                     <span> 100개</span>
 
-                    <h3>680MB</h3>
+                    <h3>100개</h3>
                   </div>
                   <div class="btm">
                     <progress max="100" value="100" class="bar-yr"></progress>
@@ -688,16 +692,18 @@
         const desc = document.querySelector(".desc");
 
         const beforewrp = document.querySelector(".beforewrap");
+        const addbefore = document.querySelector(".btnmy");
         const hide = "none";
 
         const chkTrigger = fixedEl.classList.contains("active");
 
         if (!chkTrigger) {
           fixedEl.classList.add("active");
+          addbefore.classList.add("active");
           beforewrp.classList.add("hide");
-          // desc.innerText = txtc;
         } else {
           fixedEl.classList.remove("active");
+          addbefore.classList.remove("active");
           beforewrp.classList.remove("hide");
 
           desc.innerText = txt;
