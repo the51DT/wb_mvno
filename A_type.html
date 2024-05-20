@@ -389,15 +389,15 @@
         newBeeBtn.classList.remove("on");
       }
 
-      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= blind.offsetTop) {
         // 스크롤이 맨 아래에 도달했을 때
         btmWrap.style.display = "block";
       }
 
-      if (location >= blind.offsetTop) {
-        // blind의 위치에 도달했을 때
-        btmWrap.style.display = "block";
-      }
+      // if (location >= blind.offsetTop) {
+      //   // blind의 위치에 도달했을 때
+      //   btmWrap.style.display = "block";
+      // }
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
