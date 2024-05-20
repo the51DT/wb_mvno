@@ -356,6 +356,7 @@
     const newBeeBtn = document.querySelector(".scroll-case");
     const blind = document.querySelector(".blind");
     const box4 = document.querySelector(".benefits-box.box4");
+    const box2 = document.querySelector(".benefits-box.box2");
     let scrollBefore = document.documentElement.scrollHeight;
     let scrollTimeout;
 
@@ -373,7 +374,7 @@
         header3.style.display = "none";
         header1.style.display = "flex";
         newBeeBtn.classList.remove("on");
-        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop) {
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop || location >= box2.offsetTop) {
           // 스크롤이 맨 아래에 도달했을 때
           btmWrap.style.display = "block";
         }
@@ -393,7 +394,7 @@
         newBeeBtn.classList.remove("on");
       }
 
-      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop) {
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop || location >= box2.offsetTop) {
         // 스크롤이 맨 아래에 도달했을 때
         btmWrap.style.display = "block";
       }
