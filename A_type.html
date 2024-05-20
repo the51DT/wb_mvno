@@ -393,19 +393,19 @@
       //   console.log(location);
       //   console.log(blind.offsetTop());
       // }
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        btmWrap.style.display = "block";
-      }
+      // if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      //   btmWrap.style.display = "block";
+      // }
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 
-      // // 스크롤 멈춤 감지
-      // clearTimeout(scrollTimeout);
-      // scrollTimeout = setTimeout(() => {
-      //   if (isScrollAtBottom) {
-      //     btmWrap.style.display = "block";
-      //   }
-      // }, 0);
+      // 스크롤 멈춤 감지
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+          btmWrap.style.display = "block";
+        }
+      }, 0);
     });
 
     const modal = document.getElementById("modal");
