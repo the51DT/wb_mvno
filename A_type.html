@@ -278,22 +278,29 @@
     // 바텀시트 클릭 시 active
     const toggleElements = document.querySelectorAll(".graybtn, .mybtn");
     const alarmBox = document.querySelector(".alarm-box");
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    let lastScrollTop2 = 0;
 
     toggleElements.forEach((button) => {
       button.addEventListener("click", () => {
         const fixBtm = document.querySelector(".fix-btm");
         const fixBtmActive = document.querySelector(".fix-btm-active");
         const btmWrap = document.querySelector(".btm__wrap");
+        let top2 = document.documentElement.scrollTop;
 
         if (fixBtm.style.display === "none") {
           fixBtm.style.display = "block";
           fixBtmActive.style.display = "none";
           btmWrap.classList.remove("full");
           document.body.style.overflowY = "scroll";
-          header3.style.display = "none";
-          header2.style.display = "flex";
+          if (top2 === 0) {
+            header3.style.display = "none";
+            header2.style.display = "none";
+            header1.style.display = "flex";
+          } else {
+            console.log("sssss");
+            header3.style.display = "none";
+            header1.style.display = "none";
+            header2.style.display = "flex";
+          }
         } else {
           fixBtm.style.display = "none";
           fixBtmActive.style.display = "block";
@@ -336,8 +343,6 @@
         // 스크롤 올릴 때
         btmWrap.style.display = "block";
         qnaBox.classList.remove("on");
-        console.log(!btmWrap.classList.contains("full"));
-        console.log(btmWrap.classList.contains("full"));
         header2.style.display = "flex";
         header3.style.display = "none";
       }
