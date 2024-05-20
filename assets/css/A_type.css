@@ -42,7 +42,6 @@ header.show2 {
   left: 0;
   padding: 12px 20px 12.74px;
   z-index: 20;
-  background-color: #2865da;
 }
 .alarm-box {
   padding: 10.29px 21.27px 10.29px 18px;
@@ -313,8 +312,6 @@ header.show2 {
 }
 .benefits-box.box3 {
   background-color: #ff487d;
-  background: url("../images/A_type/benenfit_bg3.png") center no-repeat;
-  background-size: 100%;
 }
 .benefits-box.box4 {
   background-color: #01010d;
@@ -343,6 +340,17 @@ header.show2 {
   transform: rotate(15deg);
   box-shadow: 30px 30px 40px 0px rgba(0, 0, 0, 0.15);
 }
+.benefits-box.box3::after {
+  position: absolute;
+  background: url("../images/A_type/benenfit_bg3.png") center no-repeat;
+  width: 100%;
+  background-size: 100%;
+  content: "";
+  width: 157px;
+  height: 148px;
+  bottom: 0;
+  right: 0;
+}
 .benefits-box.box4::after {
   position: absolute;
   background: url("../images/A_type/benenfit_img4.png") center no-repeat;
@@ -360,6 +368,7 @@ header.show2 {
   bottom: -56px;
   overflow: auto;
   transition: height 0.5s ease;
+  z-index: 21;
 }
 .btm__wrap.full::-webkit-scrollbar {
   display: none;
@@ -380,9 +389,11 @@ header.show2 {
   max-width: 77px;
   margin: -20px auto 0;
   display: block;
+  cursor: pointer;
 }
 .mybtn {
   max-width: 40px;
+  cursor: pointer;
 }
 .btm__wrap .fix-btm {
   padding-top: 15px;
@@ -738,10 +749,11 @@ header.show2 {
   max-width: 189px;
   display: block;
   position: fixed;
-  bottom: 19px;
+  bottom: 10px;
   z-index: -1;
   left: 50%;
   transform: translateX(-50%);
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
 }
 .qna-box.on {
   margin: 0 auto;
@@ -749,7 +761,7 @@ header.show2 {
   max-width: 189px;
   display: block;
   position: fixed;
-  bottom: 19px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9;
@@ -757,4 +769,18 @@ header.show2 {
 .dot_icon {
   max-width: 29px;
   margin-top: 21px;
+}
+.scroll-case {
+  display: none;
+}
+.scroll-case > img {
+  max-width: 199px;
+}
+.scroll-case.on {
+  display: block;
+  position: fixed;
+  top: 66px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
 }
