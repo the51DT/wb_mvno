@@ -536,6 +536,10 @@ section.wrap.boxFixed.active .activedwrap {
   object-fit: contain;
 }
 
+.wrap-pay:last-child {
+  margin-bottom: 50px;
+}
+
 /**/
 img.img-bar {
   margin-top: 0.594rem;
