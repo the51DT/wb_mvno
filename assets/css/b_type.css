@@ -625,30 +625,34 @@ section.wrap.boxFixed .myplan .inner .right {
   padding: 0;
 }
 
-.myplan .inner .box {
-  margin: 0 0 40px;
+section.wrap.boxFixed .myplan .inner .right .top h3:first-child {
+  width: 75px;
 }
-.myplan .inner .box .right .top {
+
+section.wrap.boxFixed .myplan .inner .box {
+  margin: 0 0 14px;
+}
+section.wrap.boxFixed .myplan .inner .box .right .top {
   width: 100%;
   display: flex;
   justify-content: start;
 }
-.myplan .inner .box .right .top span {
+section.wrap.boxFixed .myplan .inner .box .right .top span {
   color: #666;
   position: relative;
   margin-left: 14px;
 }
-.myplan .inner .box .right .top span:before {
-  content: "l";
+section.wrap.boxFixed .myplan .inner .box .right .top span:before {
+  content: "|";
   position: absolute;
   left: -10px;
   color: #ccc;
 }
-.myplan .inner .box .right .top h3:last-child {
+section.wrap.boxFixed .myplan .inner .box .right .top h3:last-child {
   margin-left: auto;
 }
 
-.myplan .inner .box .right .btm {
+section.wrap.boxFixed .myplan .inner .box .right .btm {
   width: 100%;
 }
 /* progress bar */
