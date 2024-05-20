@@ -140,7 +140,7 @@ section.wrap.box02 img {
   object-fit: cover;
 }
 section.wrap.box02 img:first-child {
-  margin-right: -10px;
+  margin-right: -13px;
 }
 section.wrap.box02 img:last-child {
   margin-left: -0.8rem;
