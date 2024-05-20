@@ -878,3 +878,7 @@ header.show2 {
 .small-cirlce {
   position: relative;
 }
+.blind {
+  width: 30px;
+  height: 30px;
+}

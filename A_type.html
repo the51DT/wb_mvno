@@ -152,6 +152,7 @@
               예비 데이터 전환
             </p>
           </div>
+          <span class="blind"></span>
         </div>
       </div>
     </div>
@@ -353,11 +354,14 @@
     const btmWrap = document.querySelector(".btm__wrap");
     const fixBtmActive2 = document.querySelector(".fix-btm-active");
     const newBeeBtn = document.querySelector(".scroll-case");
+    const blind = document.querySelector(".blind");
+    const box4 = document.querySelector(".benefits-box.box4");
 
     let scrollTimeout;
 
     window.addEventListener("scroll", () => {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      let location = document.documentElement.scrollTop;
       let windowHeight = window.innerHeight;
       let documentHeight = document.documentElement.scrollHeight;
       var isScrollAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
@@ -383,8 +387,13 @@
         header3.style.display = "none";
         newBeeBtn.classList.remove("on");
       }
-      if (isScrollAtBottom) {
-        // 스크롤이 맨 아래에 도달했을 때
+      // if (location > blind.offsetTop()) {
+      //   // 스크롤이 맨 아래에 도달했을 때
+      //   btmWrap.style.display = "block";
+      //   console.log(location);
+      //   console.log(blind.offsetTop());
+      // }
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         btmWrap.style.display = "block";
       }
 
