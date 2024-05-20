@@ -140,10 +140,28 @@ section.wrap.box02 img {
   object-fit: cover;
 }
 section.wrap.box02 img:first-child {
-  margin-right: -10px;
+  margin-right: -13px;
 }
 section.wrap.box02 img:last-child {
   margin-left: -0.8rem;
+}
+section.wrap.box02 div.lastwrapper {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+section.wrap.box02 div.lastwrapper img {
+  height: 42px;
+  margin-top: -3px;
+  margin-left: -8px;
+  margin-right: 5px;
+  -webkit-box-shadow: 2px 2px 16px 0px rgba(8, 23, 106, 0.1);
+  -moz-box-shadow: 2px 2px 16px 0px rgba(8, 23, 106, 0.1);
+  box-shadow: 2px 2px 16px 0px rgba(8, 23, 106, 0.1);
+  border-radius: 22px;
 }
 h1.h-24 {
   font-size: 1.5rem;
