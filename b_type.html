@@ -34,6 +34,7 @@
           <img src="./assets/img-b/evt-nav01.png" alt="로고" />
           <img src="./assets/img-b/overflowMenu02.png" alt="로고" />
           <img src="./assets/img-b/oveflowMenu03.png" alt="로고" />
+          <img src="./assets/img-b/ai-icn.png" alt="로고" />
         </section>
         <h1 class="h-24" style="margin-bottom: 1.25rem">
           4월 설레는 봄, <br />
@@ -308,17 +309,7 @@
 
         <!-- section4 -->
         <section class="wrap box04" style="margin-top: 52px">
-          <h2
-            style="
-              font-size: 1.5rem;
-              padding-top: 3.75rem;
-              padding-bottom: 1.25rem;
-              text-align: center;
-              color: #fff;
-            "
-          >
-            데이터 유형별 추천 요금제
-          </h2>
+          <h2 class="boxtit">데이터 유형별 추천 요금제</h2>
 
           <div>
             <div class="swiper-container custom" style="margin-bottom: 66px">
@@ -401,7 +392,7 @@
         </section>
         <!-- // section5 -->
 
-        <!-- // section6 -->
+        <!--  section6 -->
         <section class="wrap box06">
           <img
             src="./assets/img-b/bene-tit2.png"
@@ -411,8 +402,8 @@
 
           <!-- -->
 
-          <div class="benefits__container">
-            <div class="benenfits__wrap">
+          <div class="benefit-con">
+            <div class="benenfit-wrap">
               <div class="benefits-box box1">
                 <p class="benefits-txt">
                   <span>데이터 걱정 놉!</span>
@@ -438,17 +429,11 @@
           </div>
         </section>
       </article>
-
       <!-- // section6 -->
-
-      <!-- // section5 -->
-      <!-- // section5 -->
-
-      <!-- // section5 -->
-      <!-- // section5 -->
     </main>
-    <!-- fixed area -->
-    <section class="wrap boxFixed" style="position: fixed">
+
+    <!-- fixed area 바텀시트 -->
+    <section class="wrap boxFixed">
       <div class="wrap">
         <svg
           width="77"
@@ -494,14 +479,13 @@
           </div>
         </div>
         <!-- //top, before activiated -->
-        <!-- actived -->
 
+        <!-- actived -->
         <div class="activedwrap">
           <div class="imgwrap">
             <img
               src="./assets/img-b/img-greeting-active.png"
               style="max-width: 130px; padding: 15px 0 32px"
-              class=""
             />
 
             <img src="./assets/img-b/btn-my.png" class="btnmy" />
@@ -520,15 +504,7 @@
           </div>
 
           <div class="wrap-pay myplan">
-            <h2
-              style="
-                font-size: 1.25rem;
-                margin-top: 2.5rem;
-                margin-bottom: 1rem;
-              "
-            >
-              나의 요금제
-            </h2>
+            <h2 class="wrappay-tit">나의 요금제</h2>
 
             <div
               class="inner"
@@ -696,11 +672,10 @@
           },
         },
       });
-
       //
 
+      // 바텀시트 최하단 스와이퍼
       var swiper22 = new Swiper(".swiper.activeswiper", {
-        // If we need pagination
         pagination: {
           el: ".swiper-pagination.new",
           clickable: true,
