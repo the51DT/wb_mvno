@@ -400,7 +400,7 @@
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         // 스크롤이 맨 아래에 도달하지 않은 경우에만 실행
-        if (isScrollAtBottom) {
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop || location >= box2.offsetTop) {
           btmWrap.style.display = "block";
         }
       }, 0);
