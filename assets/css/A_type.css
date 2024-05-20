@@ -16,6 +16,8 @@ header {
   align-items: center;
   padding: 12px 0 12.74px 0;
   background-color: #2865da;
+  position: relative;
+  top: 0;
 }
 header .logo {
   max-width: 68px;
@@ -51,6 +53,12 @@ header.show2 {
   border-radius: 28px;
   margin: 10px 0 40px;
   height: 48px;
+  position: relative;
+  top: 0;
+}
+.alarm-box.on {
+  top: 56px;
+  margin-bottom: 90px;
 }
 .alarm-box .alarm-title {
   display: flex;
@@ -67,6 +75,9 @@ header.show2 {
 }
 .alarm-box .icon-arrow {
   max-width: 5.74px;
+}
+.type__container {
+  /* margin-top: 100px; */
 }
 .type__container .type__wrap {
   display: flex;

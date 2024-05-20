@@ -23,14 +23,12 @@
         <img src="./assets/images/A_type/logo.png" alt="" class="logo" />
         <img src="./assets/images/A_type/icon_menu.png" alt="" class="menu" />
       </header>
-      <div>
-        <div class="alarm-box">
-          <div class="alarm-title">
-            <img src="./assets/images/A_type/alarm.png" alt="" class="alarm" />
-            <span>금주의 TOP 10 요금제!</span>
-          </div>
-          <img src="./assets/images/A_type/icon_arrow.png" alt="" class="icon-arrow" />
+      <div class="alarm-box">
+        <div class="alarm-title">
+          <img src="./assets/images/A_type/alarm.png" alt="" class="alarm" />
+          <span>금주의 TOP 10 요금제!</span>
         </div>
+        <img src="./assets/images/A_type/icon_arrow.png" alt="" class="icon-arrow" />
       </div>
       <div class="type__container">
         <div class="type-title">
@@ -279,6 +277,10 @@
   <script>
     // 바텀시트 클릭 시 active
     const toggleElements = document.querySelectorAll(".graybtn, .mybtn");
+    const alarmBox = document.querySelector(".alarm-box");
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let lastScrollTop2 = 0;
+
     toggleElements.forEach((button) => {
       button.addEventListener("click", () => {
         const fixBtm = document.querySelector(".fix-btm");
@@ -290,19 +292,13 @@
           fixBtmActive.style.display = "none";
           btmWrap.classList.remove("full");
           document.body.style.overflowY = "scroll";
-          // 내릴 때
-          if (window.pageYOffset <= lastScrollTop) {
-            header1.style.display = "none";
-            header2.style.display = "flex";
-            header3.style.display = "none";
-          }
+          header3.style.display = "none";
+          header2.style.display = "flex";
         } else {
           fixBtm.style.display = "none";
           fixBtmActive.style.display = "block";
           btmWrap.classList.add("full");
           document.body.style.overflowY = "hidden";
-
-          header1.style.display = "none";
           header2.style.display = "none";
           header3.style.display = "flex";
         }
@@ -328,19 +324,8 @@
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       let windowHeight = window.innerHeight;
       let documentHeight = document.documentElement.scrollHeight;
-
-      if (scrollTop + windowHeight >= documentHeight) {
-        // 스크롤이 맨 아래에 도달했을 때
-        btmWrap.style.display = "block";
-        header1.style.display = "none";
-        header2.style.display = "none";
-        header3.style.display = "none";
-        if (btmWrap.classList.contains("full")) {
-          header1.style.display = "none";
-          header2.style.display = "none";
-          header3.style.display = "none";
-        }
-      } else if (scrollTop > lastScrollTop) {
+      var isScrollAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+      if (scrollTop > lastScrollTop) {
         // 스크롤 내릴 때
         btmWrap.style.display = "none";
         header2.style.display = "none";
@@ -351,16 +336,10 @@
         // 스크롤 올릴 때
         btmWrap.style.display = "block";
         qnaBox.classList.remove("on");
-        // 바텀시트 클릭 시 header 활성화 요소
-        if (btmWrap.classList.contains("full")) {
-          header1.style.display = "none";
-          header2.style.display = "none";
-          header3.style.display = "flex";
-        } else {
-          header1.style.display = "none";
-          header2.style.display = "flex";
-          header3.style.display = "none";
-        }
+        console.log(!btmWrap.classList.contains("full"));
+        console.log(btmWrap.classList.contains("full"));
+        header2.style.display = "flex";
+        header3.style.display = "none";
       }
 
       if (scrollTop === 0) {
@@ -368,12 +347,12 @@
         header2.style.display = "none";
         header3.style.display = "none";
       }
-
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-
-      if (scrollTop + windowHeight >= documentHeight) {
+      if (isScrollAtBottom) {
+        // 스크롤이 맨 아래에 도달했을 때
         btmWrap.style.display = "block";
       }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 
       // 스크롤 멈춤 감지
       clearTimeout(scrollTimeout);
