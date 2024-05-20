@@ -373,6 +373,10 @@
         header3.style.display = "none";
         header1.style.display = "flex";
         newBeeBtn.classList.remove("on");
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop) {
+          // 스크롤이 맨 아래에 도달했을 때
+          btmWrap.style.display = "block";
+        }
       } else {
         // 스크롤 올릴 때
         btmWrap.style.display = "block";
