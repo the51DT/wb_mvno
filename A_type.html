@@ -155,6 +155,7 @@
         </div>
       </div>
     </div>
+    <div class="btm__wrap_bg"></div>
     <div class="btm__wrap">
       <img src="./assets/images/A_type/btm_top.png" alt="" class="graybtn btm-open" />
       <div class="fix-btm">
@@ -288,6 +289,7 @@
         const fixBtm = document.querySelector(".fix-btm");
         const fixBtmActive = document.querySelector(".fix-btm-active");
         const btmWrap = document.querySelector(".btm__wrap");
+        const bg = document.querySelector(".btm__wrap_bg");
         let top2 = document.documentElement.scrollTop;
 
         if (fixBtm.style.display === "none") {
@@ -295,12 +297,12 @@
           fixBtmActive.style.display = "none";
           btmWrap.classList.remove("full");
           document.body.style.overflowY = "scroll";
+          bg.classList.remove("on");
           if (top2 === 0) {
             header3.style.display = "none";
             header2.style.display = "none";
             header1.style.display = "flex";
           } else {
-            console.log("sssss");
             header3.style.display = "none";
             header1.style.display = "none";
             header2.style.display = "flex";
@@ -309,6 +311,10 @@
           fixBtm.style.display = "none";
           fixBtmActive.style.display = "block";
           btmWrap.classList.add("full");
+          // 바텀시트 뒤 배경색 때문에
+          setTimeout(function () {
+            bg.classList.add("on");
+          }, 500);
           document.body.style.overflowY = "hidden";
           header2.style.display = "none";
           header3.style.display = "flex";
