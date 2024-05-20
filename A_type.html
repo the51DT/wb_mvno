@@ -19,7 +19,11 @@
         <img src="./assets/images/A_type/logo2.png" alt="" class="logo" />
         <img src="./assets/images/A_type/icon_menu2.png" alt="" class="menu" />
       </header>
-      <div class="alarm-fixed">
+      <header id="header3" class="show2" style="display: none">
+        <img src="./assets/images/A_type/logo.png" alt="" class="logo" />
+        <img src="./assets/images/A_type/icon_menu.png" alt="" class="menu" />
+      </header>
+      <div>
         <div class="alarm-box">
           <div class="alarm-title">
             <img src="./assets/images/A_type/alarm.png" alt="" class="alarm" />
@@ -175,7 +179,7 @@
       <div class="fix-btm-active" style="display: none">
         <div class="btm-tit">
           <img src="./assets/images/A_type/btm_title_active.png" alt="" class="btm-active-title" />
-          <img src="./assets/images/A_type/btm_my_btn.png" alt="" class="mybtn btm-open" />
+          <img src="./assets/images/A_type/btm_my_btn_close.png" alt="" class="mybtn btm-close" />
         </div>
         <div class="btm-cont01">
           <p>4월 청구요금</p>
@@ -264,6 +268,7 @@
             기본 데이터 소진 시<br />
             예비 데이터 3GB 지급
           </p>
+          <img src="./assets/images/A_type/icon_dot.png" alt="" class="dot_icon" />
         </div>
       </div>
     </div>
@@ -285,11 +290,20 @@
           fixBtmActive.style.display = "none";
           btmWrap.classList.remove("full");
           document.body.style.overflowY = "scroll";
+          // 내릴 때
+          if (window.pageYOffset <= lastScrollTop) {
+            header1.style.display = "none";
+            header2.style.display = "flex";
+            header3.style.display = "none";
+          }
         } else {
           fixBtm.style.display = "none";
           fixBtmActive.style.display = "block";
           btmWrap.classList.add("full");
           document.body.style.overflowY = "hidden";
+          header1.style.display = "none";
+          header2.style.display = "none";
+          header3.style.display = "flex";
         }
       });
     });
@@ -299,11 +313,14 @@
     const header = document.querySelector("header");
     const header1 = document.getElementById("header1");
     const header2 = document.getElementById("header2");
+    const header3 = document.getElementById("header3");
     const headerLogo = document.querySelector("header .logo");
     const headerMenu = document.querySelector("header .menu");
     const alarmBox = document.querySelector(".alarm-box");
     const btmWrap = document.querySelector(".btm__wrap");
     const qnaBox = document.querySelector(".qna-box");
+    const fixBtmActive2 = document.querySelector(".fix-btm-active");
+
     let scrollTimeout;
 
     window.addEventListener("scroll", () => {
@@ -314,25 +331,36 @@
       if (scrollTop + windowHeight >= documentHeight) {
         // 스크롤이 맨 아래에 도달했을 때
         btmWrap.style.display = "block";
+        header1.style.display = "none";
+        header2.style.display = "none";
+        header3.style.display = "none";
       } else if (scrollTop > lastScrollTop) {
         // 스크롤 내릴 때
-        alarmBox.classList.add("sticky");
         btmWrap.style.display = "none";
         header2.style.display = "none";
+        header3.style.display = "none";
         header1.style.display = "flex";
         qnaBox.classList.add("on");
       } else {
         // 스크롤 올릴 때
-        alarmBox.classList.remove("sticky");
         btmWrap.style.display = "block";
-        header1.style.display = "none";
-        header2.style.display = "flex";
         qnaBox.classList.remove("on");
+
+        if (btmWrap.classList.contains("full")) {
+          header1.style.display = "none";
+          header2.style.display = "none";
+          header3.style.display = "flex";
+        } else {
+          header1.style.display = "none";
+          header2.style.display = "flex";
+          header3.style.display = "none";
+        }
       }
 
       if (scrollTop === 0) {
-        header2.style.display = "none";
         header1.style.display = "flex";
+        header2.style.display = "none";
+        header3.style.display = "none";
       }
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;

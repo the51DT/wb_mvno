@@ -15,6 +15,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 12px 0 12.74px 0;
+  background-color: #2865da;
 }
 header .logo {
   max-width: 68px;
@@ -32,7 +33,13 @@ header.show {
   padding: 12px 20px 12.74px;
   z-index: 20;
 }
-.alarm-fixed.on {
+header.show2 {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 12px 20px 12.74px;
+  z-index: 20;
   background-color: #2865da;
 }
 .alarm-box {
@@ -44,13 +51,6 @@ header.show {
   border-radius: 28px;
   margin: 10px 0 40px;
   height: 48px;
-}
-.alarm-box.sticky {
-  position: fixed;
-  top: 0;
-  z-index: 20;
-  width: calc(100% - 40px);
-  margin-top: 0;
 }
 .alarm-box .alarm-title {
   display: flex;
@@ -71,7 +71,7 @@ header.show {
 .type__container .type__wrap {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 40px;
 }
 .type__container .type-title p {
   font-size: 18px;
@@ -344,27 +344,26 @@ header.show {
   right: 0;
 }
 .btm__wrap.full {
-  height: auto;
-  top: 56px;
+  height: 100%;
+  /* top: 56px; */
+  bottom: -56px;
   overflow: auto;
+  transition: height 0.5s ease;
 }
 .btm__wrap.full::-webkit-scrollbar {
   display: none;
 }
-.btm__wrap.full {
-  height: auto;
-  top: 56px;
-}
 .btm__wrap {
   height: 162px;
   position: fixed;
-  bottom: -1px;
+  bottom: -10px;
   padding: 30px 20px 35px;
   background-color: #fff;
   border-radius: 28px 28px 0 0;
   width: 100%;
   left: 0;
   z-index: 10;
+  transition: height 0.5s ease;
 }
 .graybtn {
   max-width: 77px;
@@ -376,8 +375,6 @@ header.show {
 }
 .btm__wrap .fix-btm {
   padding-top: 15px;
-}
-.btm__wrap .btm-tit {
 }
 .btm__wrap .fix-btm .btm-tit p {
   font-size: 14px;
@@ -673,6 +670,7 @@ header.show {
   font-weight: 500;
   line-height: 20px;
   letter-spacing: -0.39px;
+  color: #fff;
 }
 .btm__wrap .fix-btm-active .apply-box .right {
   display: flex;
@@ -682,6 +680,7 @@ header.show {
   font-weight: 500;
   line-height: 20px;
   letter-spacing: -0.39px;
+  color: #fff;
 }
 .btm__wrap .fix-btm-active .total-box {
   display: flex;
@@ -718,6 +717,9 @@ header.show {
 .btm__wrap .fix-btm-active .benefits-box.box1 {
   margin-top: 40px;
 }
+.btm__wrap .fix-btm-active .benefits-txt {
+  color: #fff;
+}
 
 .qna {
   margin: 0 auto;
@@ -725,7 +727,7 @@ header.show {
   max-width: 189px;
   display: block;
   position: fixed;
-  bottom: 40px;
+  bottom: 19px;
   z-index: -1;
   left: 50%;
   transform: translateX(-50%);
@@ -736,8 +738,12 @@ header.show {
   max-width: 189px;
   display: block;
   position: fixed;
-  bottom: 40px;
+  bottom: 19px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9;
+}
+.dot_icon {
+  max-width: 29px;
+  margin-top: 21px;
 }
