@@ -54,6 +54,9 @@ img {
   line-height: 22px;
   letter-spacing: -0.4px;
 }
+.login_before {
+  cursor: pointer;
+}
 .login_after {
   display: none;
   padding: 0 20px;
