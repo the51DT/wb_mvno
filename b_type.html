@@ -829,11 +829,13 @@
           addbefore.classList.add("active");
           beforewrp.classList.add("hide");
           document.body.style.overflowY = "hidden";
+          document.body.classList.add('on')
         } else {
           fixedEl.classList.remove("active");
           addbefore.classList.remove("active");
           beforewrp.classList.remove("hide");
           document.body.style.overflowY = "scroll";
+          document.body.classList.remove('on')
 
           desc.innerText = txt;
         }

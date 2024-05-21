@@ -317,6 +317,7 @@
           fixBtmActive.style.display = "none";
           btmWrap.classList.remove("full");
           document.body.style.overflowY = "scroll";
+          document.body.classList.remove('on')
           bg.classList.remove("on");
           if (top2 === 0) {
             header3.style.display = "none";
@@ -336,6 +337,7 @@
             bg.classList.add("on");
           }, 500);
           document.body.style.overflowY = "hidden";
+          document.body.classList.add('on')
           header2.style.display = "none";
           header3.style.display = "flex";
         }
@@ -355,6 +357,7 @@
               fixBtmActive.style.display = "none";
               btmWrap.classList.remove("full");
               document.body.style.overflowY = "scroll";
+              document.body.classList.remove('on')
               bg.classList.remove("on");
             }
           });
@@ -436,12 +439,14 @@
       modal.classList.add("active");
       dimmed.style.display = "block";
       document.body.style.overflowY = "hidden";
+      document.body.classList.add('on')
     });
 
     modalClose.addEventListener("click", () => {
       modal.classList.remove("active");
       dimmed.style.display = "none";
       document.body.style.overflowY = "scroll";
+      document.body.classList.remove('on')
     });
   </script>
 </html>

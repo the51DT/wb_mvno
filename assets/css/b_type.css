@@ -7,6 +7,13 @@ body {
   --blue: #1e93ff;
 }
 
+html.on, body.on {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hideen;
+  overscroll-behavior: none;
+}
+
 main {
   background: var(--skyblue);
   font-size: 16px;

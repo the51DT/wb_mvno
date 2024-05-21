@@ -1,6 +1,14 @@
 body::-webkit-scrollbar {
   display: none;
 }
+
+html.on, body.on {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hideen;
+  overscroll-behavior: none;
+}
+
 #wrap {
   padding: 0 20px;
   background-color: #2865da;
