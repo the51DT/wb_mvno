@@ -1,5 +1,12 @@
 @charset "utf-8";
 
+html.on, body.on {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hideen;
+  overscroll-behavior: none;
+}
+
 img {
   width: 100%;
 }

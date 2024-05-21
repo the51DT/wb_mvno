@@ -367,17 +367,20 @@
         my.style.height = 'calc(100% - 88.25px)'
         my.style.bottom = '0'
         body.style.overflowY = "hidden";
+        body.classList.add('on')
       }
     })
     my_close.addEventListener('click', ()=>{
       my.style.height = '0'
       my.style.bottom = '-100px'
       body.style.overflowY = "scroll";
+      body.classList.remove('on')
     })
     indicator.addEventListener('click', ()=>{
       my.style.height = '0'
       my.style.bottom = '-100px'
       body.style.overflowY = "scroll";
+      body.classList.remove('on')
     })
   </script>
 </body>
