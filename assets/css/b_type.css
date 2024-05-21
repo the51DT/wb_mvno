@@ -120,6 +120,36 @@ section.wrap.box01 .r img {
 /*  padding: 1.625rem 1.25rem 0;
 */
 
+.wrappp {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+  margin-top: -15px;
+}
+
+.wrappp > div {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.wrappp > div img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wrappp .slide {
+  display: flex;
+}
+.wrappp .slide img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 -12px 0;
+  max-height: 70px;
+}
 /**/
 section.wrap.box02 {
   border-radius: 0;
@@ -143,9 +173,18 @@ section.wrap.box02 {
   margin-top: -15px;
   margin-bottom: 15px;
 }
+
+section.wrap.box02 div {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
 section.wrap.box02 img {
   max-width: 170px;
   object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 section.wrap.box02 img:first-child {
   margin-right: -13px;
