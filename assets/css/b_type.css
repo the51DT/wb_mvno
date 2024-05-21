@@ -374,6 +374,7 @@ section.wrap.box05 .cardlist-wrap {
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: space-between;
 }
 section.wrap.box05 .cardlist-wrap.line {
   margin: 21px auto;
@@ -387,7 +388,6 @@ section.wrap.box05 .cardlist-wrap img.cardlistimg {
 section.wrap.box05 .cardlist-wrap .right {
   display: flex;
   margin-left: 16px;
-  margin-right: 16px;
   width: 100%;
   position: relative;
 }
@@ -498,7 +498,7 @@ section.wrap.boxFixed {
   position: fixed;
   bottom: -1rem;
   max-width: 100%;
-  height: 10.125rem;
+  height: 162px;
   margin: 0;
   width: 100%;
   border-radius: 1rem;
