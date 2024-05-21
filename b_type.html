@@ -23,6 +23,9 @@
       <!-- // nav  -->
 
       <article>
+        <div class="sticky">
+          <img src="./assets/img-b/top-btn.png" />
+        </div>
         <!-- section1 -->
         <section class="wrap box01">
           <img
@@ -34,7 +37,7 @@
           <div class="l">
             <p style="font-size: 14px; font-weight: 400">나에게 꼭 맞는,</p>
             <p
-              style="font-size: 20px; font-weight: 600; letter-spacing: -0.05em"
+              style="font-size: 18px; font-weight: 600; letter-spacing: -0.05em"
             >
               빠르고 저렴한 요금제 찾기!
             </p>
@@ -369,7 +372,13 @@
     </main>
 
     <!-- fixed area 바텀시트 -->
+
+    <div class="loginwrap" onClick="Trglogin()">
+      <img src="./assets/img-b/loginbtn.png" />
+    </div>
+
     <section class="wrap boxFixed">
+      <!---->
       <div class="wrap">
         <svg
           width="77"
@@ -637,6 +646,33 @@
       });
 
       // trigger evt
+      const loginwrap = document.querySelector(".loginwrap");
+      function Trglogin() {
+        loginwrap.style.display = "none";
+        document.querySelector("section.wrap.boxFixed").style.display = "block";
+      }
+
+      // scroll
+
+      window.addEventListener("scroll", () => {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        let location = document.documentElement.scrollTop;
+        let windowHeight = window.innerHeight;
+        let documentHeight = document.documentElement.scrollHeight;
+        var isScrollAtBottom =
+          window.innerHeight + window.scrollY >= document.body.offsetHeight;
+        const sticky = document.querySelector(".sticky");
+
+        if (scrollTop > 10) {
+          sticky.style.display = "flex";
+        } else {
+          sticky.style.display = "none";
+        }
+      });
+
+      //
+
       const fixedEl = document.querySelector("section.wrap.boxFixed");
       const chkTrigger = fixedEl.classList.contains(".active");
 

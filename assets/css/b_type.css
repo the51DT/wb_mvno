@@ -136,6 +136,7 @@ section.wrap.box02::-webkit-scrollbar {
 
 section.wrap.box02 {
   display: flex;
+  margin-top: -15px;
 }
 section.wrap.box02 img {
   max-width: 170px;
@@ -386,6 +387,7 @@ section.wrap.box05 .cardlist-wrap img.cardlistimg {
 section.wrap.box05 .cardlist-wrap .right {
   display: flex;
   margin-left: 16px;
+  margin-right: 16px;
   width: 100%;
   position: relative;
 }
@@ -427,10 +429,10 @@ section.wrap.box05 .cardlist-wrap .right .txt-wrap h3 {
   text-align: left;
 }
 section.wrap.box05 .cardlist-wrap .right img.arrowr {
-  max-width: 10px;
   position: absolute;
   top: 50%;
   right: 0;
+  max-width: 10px;
 }
 section.wrap.box05 .fff.round {
   border-radius: 1rem;
@@ -501,7 +503,51 @@ section.wrap.boxFixed {
   width: 100%;
   border-radius: 1rem;
   z-index: 999;
+  display: none;
+  transition: all 0.3s ease-out;
 }
+
+.loginwrap {
+  gap: 8px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  z-index: 9999;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #237cff;
+}
+.loginwrap img {
+  max-width: 199px;
+  margin-top: -3rem;
+}
+.loginwrap p {
+  text-align: center;
+  width: 200px;
+  margin: 0 auto 12px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #237cff;
+  border: 2px solid #237cff;
+  height: 100%;
+  border-radius: 50px;
+  padding: 4px, 20px, 4px, 20px;
+  box-shadow: 2px 2px 16px 0px #00000033;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.8px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  background: #fff;
+}
+/**/
 
 section.wrap.boxFixed .beforewrap.hide {
   display: none;
@@ -838,7 +884,7 @@ progress:after {
 /* benefit */
 .benefit-con {
   /* margin-top: 113.09px;*/
-  padding-bottom: 222px;
+  padding-bottom: 128px;
   color: #fff;
 }
 .benenfit-wrap {
@@ -1007,4 +1053,25 @@ section.wrap.boxFixed .myfare-info .apply-box .right {
 
 .icn-conti {
   max-width: 24px;
+}
+
+/***/
+.sticky {
+  position: fixed;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 99999;
+  position: fixed;
+  top: 66px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+  display: none;
+}
+
+.sticky img {
+  max-width: 199px;
 }
