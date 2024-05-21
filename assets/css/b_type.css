@@ -925,6 +925,9 @@ section.wrap.boxFixed .myplan .inner .box .right .btm {
   font-size: 14px;
   display: flex;
   align-items: center;
+  font-family: Pretendard;
+  line-height: 20px;
+  letter-spacing: -0.42px;
 }
 
 .btn-more.first {
@@ -1280,7 +1283,8 @@ section.wrap.boxFixed .myfare-info .apply-box .right {
   .swiper-pagination-bullets.swiper-pagination-horizontal,
   .swiper-pagination-custom,
   .swiper-pagination-fraction {
-    width: 85%;
+    /* width: 85%;*/
+    width: calc(90% - 10px);
     left: 9%;
   }
 }
