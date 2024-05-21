@@ -655,19 +655,19 @@
 
       var mySwiper = new Swiper(".swiper-container.custom", {
         slidesPerView: 1, // 가로 3줄
-        spaceBetween: 0, // 공백 없음
+        spaceBetween: 25, // 공백 없음
         slidesPerColumn: 2, // 세로 2줄
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
           renderBullet: function (index, className) {
+            // return '<div class="custom-bullet ' + className + '">' + '<img src="' + menu[index] + '" alt="Plan2">' + "</div>";
             return (
               '<div class="custom-bullet ' +
               className +
               '">' +
-              '<img src="' +
-              menu[index] +
-              '" alt="Plan2">' +
+              '<div class="custom_pagination">' +
+              "</div>" +
               "</div>"
             );
           },
@@ -691,10 +691,13 @@
       const loginwrap = document.querySelector(".loginwrap");
       function Trglogin() {
         loginwrap.style.display = "none";
+        document
+          .querySelector("section.wrap.boxFixed")
+          .classList.add("addHeight");
         document.querySelector("section.wrap.boxFixed").style.bottom = "-15px";
         document.querySelector("section.wrap.boxFixed").style.transition =
           "all 0.3s ease-out";
-        document.querySelector("section.wrap.boxFixed").style.display = "block";
+        document.querySelector("section.wrap.boxFixed").style.display = "162px";
       }
 
       // scroll
