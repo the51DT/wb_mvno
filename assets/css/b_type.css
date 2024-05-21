@@ -197,7 +197,6 @@ section.wrap.box03 {
 section.wrap.box03 .swiper-planPagi-wrap {
   width: fit-content;
   display: flex;
-  margin-top: 20px;
 }
 
 section.wrap.box03 .swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -391,6 +390,7 @@ section.wrap.box04 h2.boxtit {
   border: none;
   height: 50px;
   width: 100px;
+  margin: 0;
 }
 .swiper-container.custom .custom-bullet img {
   width: 100%;
@@ -401,6 +401,13 @@ section.wrap.box04 h2.boxtit {
 .swiper-container.custom .swiper-wrapper.custom-wrapp {
   padding: 50px 0;
   margin: 75px 0 0;
+}
+
+.swiper-container.custom .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.swiper-container.custom .swiper-pagination-bullet {
+  opacity: 1;
 }
 
 /*05*/
@@ -456,21 +463,24 @@ section.wrap.box05 .cardlist-wrap .right .txt-wrap span {
   border-radius: 1rem;
   width: 32px;
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
+
+  padding: 2px 7px 2px 7px;
+  gap: 10px;
+  opacity: 0px;
 }
 
 section.wrap.box05 .cardlist-wrap .right .txt-wrap p {
-  font-family: Pretendard;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 10px;
   letter-spacing: -0.05em;
   text-align: left;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 section.wrap.box05 .cardlist-wrap .right .txt-wrap h3 {
-  margin: 10px 0 6px;
+  margin: 5px 0 6px;
   font-size: 1rem;
   border: none;
   font-family: Pretendard;
