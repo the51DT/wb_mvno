@@ -7,10 +7,6 @@ body {
   --blue: #1e93ff;
 }
 
-body.active {
-  touch-action: none;
-}
-
 main {
   background: var(--skyblue);
   font-size: 16px;
