@@ -622,7 +622,7 @@
         "./assets/img-b/type01-plan.png",
         "./assets/img-b/gb100.png",
         "./assets/img-b/type02-plan.png",
-        "./assets/img-b/gb50.png",
+        "./assets/img-b/gb15.png",
         "./assets/img-b/gb3.png",
         "./assets/img-b/gb1.png",
       ];
@@ -639,6 +639,9 @@
       });
 
       var mySwiper = new Swiper(".swiper-container.custom", {
+        slidesPerView: 1, // 가로 3줄
+        spaceBetween: 0, // 공백 없음
+        slidesPerColumn: 2, // 세로 2줄
         pagination: {
           el: ".swiper-pagination",
           clickable: true,

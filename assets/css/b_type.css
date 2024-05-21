@@ -291,6 +291,10 @@ section.wrap.box03 .plan-wrap span.label {
 .swiper-container.custom .swiper-wrapper .swiper-slide {
   width: 20.938rem;
   height: 100%;
+
+  /* 세로 2줄, 가로 3줄 */
+  width: calc(100% / 3);
+  height: calc(100% / 2);
 }
 
 .swiper-container.custom .swiper-wrapper .swiper-slide img {
@@ -298,12 +302,25 @@ section.wrap.box03 .plan-wrap span.label {
   margin: 0 auto;
   display: flex;
   object-fit: contain;
+  border: 2px solid;
 }
 
 .swiper-container.custom .custom-bullet img {
-  max-width: 98px;
   width: 100%;
-  height: 50px;
+  width: 100%;
+  max-height: 50px;
+  object-fit: contain;
+}
+
+.swiper-container.custom .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  height: 6.25rem; /* 100px로 설정 */
+  width: 100%;
+  margin: 0; /* 추가 */
 }
 
 /* 04 */
@@ -326,6 +343,7 @@ section.wrap.box04 h2.boxtit {
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
+  /*
   bottom: 0;
   top: -4rem;
   height: 6.25rem;
@@ -334,6 +352,29 @@ section.wrap.box04 h2.boxtit {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  height: 6.25rem; 
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 0;*/
+}
+
+.swiper-container.custom.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  display: flex;
+  width: 100%;
+  top: -4rem;
+  border: 1px solid;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-container.custom.swiper-horizontal
@@ -343,11 +384,16 @@ section.wrap.box04 h2.boxtit {
   font-size: 2.313rem;
   font-weight: 700;
   background: none;
-  width: 100%;
   border: none;
   height: 50px;
+  width: 100px;
 }
-
+.swiper-container.custom .custom-bullet img {
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  object-fit: contain;
+}
 .swiper-container.custom .swiper-wrapper.custom-wrapp {
   padding: 50px 0;
   margin: 75px 0 0;
@@ -632,7 +678,7 @@ section.wrap.boxFixed .right img {
 }
 /* after triggered */
 section.wrap.boxFixed.active {
-  bottom: -56px;
+  bottom: -56px !important;
   height: 100%;
   overflow-y: auto;
   transition: all 0.3s ease-out;
