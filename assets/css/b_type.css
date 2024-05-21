@@ -1177,6 +1177,8 @@ section.wrap.boxFixed .myfare-info .apply-box .right {
 }
 
 .sticky img {
+  margin: 0 auto;
+  display: block;
   max-width: 199px;
 }
 

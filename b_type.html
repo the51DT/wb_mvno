@@ -410,11 +410,11 @@
     </main>
 
     <!-- fixed area 바텀시트 -->
-    <div class="loginwrap" onClick="Trglogin()">
-      <img src="./assets/img-b/loginbtn.png" />
+    <div class="loginwrap">
+      <img src="./assets/img-b/loginbtn.png" onClick="Trglogin()" />
     </div>
 
-    <div class="btmWrap">
+    <div>
       <section class="wrap boxFixed">
         <!---->
         <div class="wrap">
@@ -715,30 +715,75 @@
         document.querySelector("section.wrap.boxFixed").style.display = "162px";
       }
 
-      // scroll
-      window.addEventListener("scroll", () => {
-        let lastScrollTop = 0;
+      // // scroll
+      // window.addEventListener("scroll", () => {
+      //   let lastScrollTop = 0;
 
+      //   let scrollTop =
+      //     window.pageYOffset || document.documentElement.scrollTop;
+
+      //   let location = document.documentElement.scrollTop;
+      //   let windowHeight = window.innerHeight;
+      //   let documentHeight = document.documentElement.scrollHeight;
+      //   var isScrollAtBottom =
+      //     window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
+      //   const sticky = document.querySelector(".sticky");
+      //   const navi = document.querySelector(".navi");
+      //   const addH = document.querySelector(".boxFixed");
+      //   const btmWrap = document.querySelector(".btmWrap");
+
+      //   if (scrollTop > 10) {
+      //     sticky.style.display = "flex";
+      //     navi.classList.add("fix");
+      //   } else {
+      //     sticky.style.display = "none";
+      //     navi.classList.remove("fix");
+      //     btmWrap.style.display = "none";
+      //   }
+
+      //   if (
+      //     window.scrollY + window.innerHeight >=
+      //     document.documentElement.scrollHeight
+      //   ) {
+      //     // 스크롤이 맨 아래에 도달했을 때
+      //   } else {
+      //     //addH.style.display = "none";
+      //   }
+
+      //   if (scrollTop < lastScrollTop) {
+      //     // 스크롤 올릴 때
+      //     btmWrap.style.display = "block";
+      //   }
+
+      //   // lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      // });
+
+      let lastScrollTop = 0;
+      let scrollBefore = document.documentElement.scrollHeight;
+      let scrollTimeout;
+      window.addEventListener("scroll", () => {
         let scrollTop =
           window.pageYOffset || document.documentElement.scrollTop;
-
         let location = document.documentElement.scrollTop;
         let windowHeight = window.innerHeight;
         let documentHeight = document.documentElement.scrollHeight;
         var isScrollAtBottom =
           window.innerHeight + window.scrollY >= document.body.offsetHeight;
-
+        const btmWrap = document.querySelector(
+          "section.wrap.boxFixed.addHeight"
+        );
         const sticky = document.querySelector(".sticky");
-        const navi = document.querySelector(".navi");
-        const addH = document.querySelector(".boxFixed.addHeight");
-        const btmWrap = document.querySelector(".btmWrap");
 
-        if (scrollTop > 10) {
-          sticky.style.display = "flex";
-          navi.classList.add("fix");
-        } else {
-          sticky.style.display = "none";
-          navi.classList.remove("fix");
+        if (scrollTop > lastScrollTop) {
+          // 스크롤 내릴 때
+          btmWrap.style.display = "none";
+        } else if (scrollTop < lastScrollTop) {
+          // 스크롤 올릴 때
+          btmWrap.style.display = "block";
+        }
+
+        if (scrollTop === 0) {
           btmWrap.style.display = "block";
         }
 
@@ -748,15 +793,18 @@
         ) {
           // 스크롤이 맨 아래에 도달했을 때
           btmWrap.style.display = "block";
-        } else {
-          addH.style.display = "none";
         }
 
-        if (scrollTop < lastScrollTop) {
-          // 스크롤 올릴 때
-
-          addH.style.display = "block";
-        }
+        // 스크롤 멈춤 감지
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          if (
+            window.scrollY + window.innerHeight >=
+            document.documentElement.scrollHeight
+          ) {
+            btmWrap.style.display = "block";
+          }
+        }, 0);
 
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
       });
@@ -793,6 +841,21 @@
           desc.innerText = txt;
         }
       }
+
+      function handleScroll() {
+        // 스크롤 위치 가져오기
+        var scrollPosition = window.scrollY;
+        const addH = document.querySelector(".boxFixed");
+        const sticky = document.querySelector(".sticky");
+
+        // 스크롤 위치에 따라 요소의 표시 여부 결정
+        if (scrollPosition > 0) {
+          sticky.classList.remove("hidden");
+        } else {
+          addH.style.display = "none";
+        }
+      }
+      window.addEventListener("scroll", handleScroll);
     </script>
   </body>
 </html>
