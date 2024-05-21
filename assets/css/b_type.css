@@ -200,6 +200,7 @@ section.wrap.box03 .swiper-pagination-bullets.swiper-pagination-horizontal {
   height: auto;
   margin: 0;
   left: auto;
+  bottom: 0;
   display: block;
 }
 
@@ -597,7 +598,7 @@ section.wrap.boxFixed .beforewrap .prg-pay {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 14px;
+  margin-top: 7px;
   margin-bottom: 35px;
 }
 
