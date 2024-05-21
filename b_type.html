@@ -774,17 +774,23 @@
           "section.wrap.boxFixed.addHeight"
         );
         const sticky = document.querySelector(".sticky");
-
+        const navi = document.querySelector(".navi");
         if (scrollTop > lastScrollTop) {
           // 스크롤 내릴 때
           btmWrap.style.display = "none";
+          navi.style.position = "fixed";
+          navi.style.width = "100%";
+          navi.style.zIndex = "99999";
+          sticky.style.display = "block";
         } else if (scrollTop < lastScrollTop) {
           // 스크롤 올릴 때
           btmWrap.style.display = "block";
+          sticky.style.display = "none";
         }
 
         if (scrollTop === 0) {
           btmWrap.style.display = "block";
+          navi.style.position = "relative";
         }
 
         if (
