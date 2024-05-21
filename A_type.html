@@ -152,6 +152,7 @@
               예비 데이터 전환
             </p>
           </div>
+          <span class="blind"></span>
         </div>
       </div>
     </div>
@@ -353,14 +354,20 @@
     const btmWrap = document.querySelector(".btm__wrap");
     const fixBtmActive2 = document.querySelector(".fix-btm-active");
     const newBeeBtn = document.querySelector(".scroll-case");
-
+    const blind = document.querySelector(".blind");
+    const box4 = document.querySelector(".benefits-box.box4");
+    const box2 = document.querySelector(".benefits-box.box2");
+    const box1 = document.querySelector(".benefits-box.box1");
+    let scrollBefore = document.documentElement.scrollHeight;
     let scrollTimeout;
 
     window.addEventListener("scroll", () => {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      let location = document.documentElement.scrollTop;
       let windowHeight = window.innerHeight;
       let documentHeight = document.documentElement.scrollHeight;
       var isScrollAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
       if (scrollTop > lastScrollTop) {
         // 스크롤 내릴 때
         btmWrap.style.display = "none";
@@ -368,7 +375,7 @@
         header3.style.display = "none";
         header1.style.display = "flex";
         newBeeBtn.classList.remove("on");
-      } else {
+      } else if (scrollTop < lastScrollTop) {
         // 스크롤 올릴 때
         btmWrap.style.display = "block";
         header3.style.display = "none";
@@ -383,20 +390,21 @@
         header3.style.display = "none";
         newBeeBtn.classList.remove("on");
       }
-      if (isScrollAtBottom) {
+
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop || location >= box2.offsetTop) {
         // 스크롤이 맨 아래에 도달했을 때
         btmWrap.style.display = "block";
       }
 
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      // 스크롤 멈춤 감지
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop || location >= box2.offsetTop) {
+          btmWrap.style.display = "block";
+        }
+      }, 0);
 
-      // // 스크롤 멈춤 감지
-      // clearTimeout(scrollTimeout);
-      // scrollTimeout = setTimeout(() => {
-      //   if (isScrollAtBottom) {
-      //     btmWrap.style.display = "block";
-      //   }
-      // }, 0);
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
     const modal = document.getElementById("modal");

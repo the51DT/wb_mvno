@@ -267,7 +267,7 @@ header.show2 {
 }
 .benefits__container {
   margin-top: 113.09px;
-  padding-bottom: 222px;
+  padding-bottom: 128px;
 }
 .benefits__container .benefits-title {
   max-width: 258px;
@@ -877,4 +877,8 @@ header.show2 {
 }
 .small-cirlce {
   position: relative;
+}
+.blind {
+  width: 30px;
+  height: 30px;
 }
