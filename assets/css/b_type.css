@@ -137,6 +137,7 @@ section.wrap.box02::-webkit-scrollbar {
 section.wrap.box02 {
   display: flex;
   margin-top: -15px;
+  margin-bottom: 15px;
 }
 section.wrap.box02 img {
   max-width: 170px;
