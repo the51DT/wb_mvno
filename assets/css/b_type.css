@@ -1166,14 +1166,13 @@ section.wrap.boxFixed .myfare-info .apply-box .right {
   justify-content: center;
   align-items: center;
   width: 100%;
-  z-index: 99999;
   position: fixed;
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9;
   display: none;
-  z-index: 99999;
+  z-index: 99;
 }
 
 .sticky img {
@@ -1434,7 +1433,7 @@ body::-webkit-scrollbar {
 .navi.fix {
   position: fixed;
   width: 100%;
-  z-index: 9999;
+  z-index: 99;
 }
 
 .on {
