@@ -533,7 +533,7 @@ img {
   width: 60px;
 }
 .scroll {
-  height: calc(100vh - 240px);
+  height: calc(100% - 100px);
   overflow-y: scroll;
 }
 .scroll::-webkit-scrollbar {
