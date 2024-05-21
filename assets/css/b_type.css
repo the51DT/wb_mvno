@@ -305,7 +305,6 @@ section.wrap.box03 .plan-wrap span.label {
   margin: 0 auto;
   display: flex;
   object-fit: contain;
-  border: 2px solid;
 }
 
 .swiper-container.custom .custom-bullet img {
@@ -374,7 +373,6 @@ section.wrap.box04 h2.boxtit {
   display: flex;
   width: 100%;
   top: -4rem;
-  border: 1px solid;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
