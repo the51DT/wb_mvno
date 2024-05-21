@@ -728,10 +728,12 @@
           fixedEl.classList.add("active");
           addbefore.classList.add("active");
           beforewrp.classList.add("hide");
+          document.body.style.overflowY = "hidden";
         } else {
           fixedEl.classList.remove("active");
           addbefore.classList.remove("active");
           beforewrp.classList.remove("hide");
+          document.body.style.overflowY = "scroll";
 
           desc.innerText = txt;
         }
