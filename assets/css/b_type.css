@@ -7,7 +7,7 @@ body {
   --blue: #1e93ff;
 }
 
-html.on, body.on {
+html.active, body.active {
   touch-action: none;
   -webkit-overflow-scrolling: none;
   overflow: hidden;
