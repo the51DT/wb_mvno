@@ -754,7 +754,6 @@
       let scrollBefore = document.documentElement.scrollHeight;
       let scrollTimeout;
       window.addEventListener("scroll", () => {
-        const test = document.querySelector('article')
         let scrollTop =
           window.pageYOffset || document.documentElement.scrollTop;
         let location = document.documentElement.scrollTop;
@@ -825,20 +824,16 @@
 
         const chkTrigger = fixedEl.classList.contains("active");
 
-
         if (!chkTrigger) {
           fixedEl.classList.add("active");
           addbefore.classList.add("active");
           beforewrp.classList.add("hide");
-          console.log(document.body)
           document.body.style.overflowY = "hidden";
-          document.body.classList.add('hidden')
         } else {
           fixedEl.classList.remove("active");
           addbefore.classList.remove("active");
           beforewrp.classList.remove("hide");
           document.body.style.overflowY = "scroll";
-          document.body.classList.remove('hidden')
 
           desc.innerText = txt;
         }
