@@ -37,7 +37,7 @@
           <h4>유형을 선택하세요</h4>
         </div>
         <div class="type__wrap">
-          <div class="type-box box1">
+          <a class="type-box box1" href="./A_type_sub.html">
             <div class="type-txt">
               <h3>FLEX</h3>
               <p>
@@ -47,7 +47,7 @@
               <strong>#무제한<br />#도파민중독자</strong>
             </div>
             <img src="./assets/images/A_type/type1_icon.png" alt="" class="icon-arrow" />
-          </div>
+          </a>
           <div class="type-box box2">
             <div class="type-txt">
               <h3>FIRE</h3>
@@ -301,7 +301,7 @@
   </body>
   <script>
     // 바텀시트 클릭 시 active
-    const toggleElements = document.querySelectorAll(".graybtn, .mybtn");
+    const toggleElements = document.querySelectorAll(".fix-btm");
     const alarmBox = document.querySelector(".alarm-box");
 
     toggleElements.forEach((button) => {
@@ -339,6 +339,26 @@
           header2.style.display = "none";
           header3.style.display = "flex";
         }
+        // 클릭 후 다시 요소 선택
+        const newToggleElements = document.querySelectorAll(".btm__wrap.full .fix-btm-active .btm-tit");
+        newToggleElements.forEach((newButton) => {
+          newButton.addEventListener("click", () => {
+            // 동일한 로직
+            const fixBtm = document.querySelector(".fix-btm");
+            const fixBtmActive = document.querySelector(".fix-btm-active");
+            const btmWrap = document.querySelector(".btm__wrap");
+            const bg = document.querySelector(".btm__wrap_bg");
+            let top2 = document.documentElement.scrollTop;
+
+            if (fixBtm.style.display === "none") {
+              fixBtm.style.display = "block";
+              fixBtmActive.style.display = "none";
+              btmWrap.classList.remove("full");
+              document.body.style.overflowY = "scroll";
+              bg.classList.remove("on");
+            }
+          });
+        });
       });
     });
 
