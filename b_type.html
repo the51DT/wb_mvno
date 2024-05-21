@@ -10,7 +10,7 @@
     <script src="./assets/js/swiper.js"></script>
   </head>
   <body>
-    <main>
+    <main class="b-type-main">
       <nav>
         <ul>
           <li><img src="./assets/img-b/wb_logo.png" alt="로고" /></li>
@@ -23,6 +23,9 @@
       <!-- // nav  -->
 
       <article>
+        <div class="sticky">
+          <img src="./assets/img-b/top-btn.png" />
+        </div>
         <!-- section1 -->
         <section class="wrap box01">
           <img
@@ -34,7 +37,7 @@
           <div class="l">
             <p style="font-size: 14px; font-weight: 400">나에게 꼭 맞는,</p>
             <p
-              style="font-size: 20px; font-weight: 600; letter-spacing: -0.05em"
+              style="font-size: 18px; font-weight: 600; letter-spacing: -0.05em"
             >
               빠르고 저렴한 요금제 찾기!
             </p>
@@ -269,10 +272,33 @@
         <!--section4 -->
 
         <!-- // section5 -->
-        <h1 class="h-24 jehyu" style="margin-top: 3rem">
+        <!--
+        <h1
+          class="h-24 jehyu"
+          style="
+            margin-top: 3rem;
+            font-family: Pretendard;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 28.8px;
+            letter-spacing: -0.03em;
+            text-align: left;
+          "
+        >
           제휴카드 발급받고 <br />
           할인 혜택 받아보세요
-        </h1>
+        </h1>-->
+
+        <img
+          src="./assets/img-b/jehyutit.png"
+          style="max-width: 258px; margin-left: 20px"
+          class=""
+        />
+        <!--      <img
+            src="./assets/img-b/jehyutit.png"
+            style="max-width: 258px"
+            class=""
+          />-->
         <section class="wrap box05">
           <div
             class="fff round"
@@ -333,7 +359,7 @@
           <img
             src="./assets/img-b/bene-tit2.png"
             alt="로고"
-            style="width: 12.375rem; margin-right: auto"
+            style="max-width: 258px; margin-right: auto"
           />
 
           <!-- -->
@@ -369,7 +395,13 @@
     </main>
 
     <!-- fixed area 바텀시트 -->
+
+    <div class="loginwrap" onClick="Trglogin()">
+      <img src="./assets/img-b/loginbtn.png" />
+    </div>
+
     <section class="wrap boxFixed">
+      <!---->
       <div class="wrap">
         <svg
           width="77"
@@ -590,7 +622,7 @@
         "./assets/img-b/type01-plan.png",
         "./assets/img-b/gb100.png",
         "./assets/img-b/type02-plan.png",
-        "./assets/img-b/gb50.png",
+        "./assets/img-b/gb15.png",
         "./assets/img-b/gb3.png",
         "./assets/img-b/gb1.png",
       ];
@@ -607,6 +639,9 @@
       });
 
       var mySwiper = new Swiper(".swiper-container.custom", {
+        slidesPerView: 1, // 가로 3줄
+        spaceBetween: 0, // 공백 없음
+        slidesPerColumn: 2, // 세로 2줄
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -637,6 +672,36 @@
       });
 
       // trigger evt
+      const loginwrap = document.querySelector(".loginwrap");
+      function Trglogin() {
+        loginwrap.style.display = "none";
+        document.querySelector("section.wrap.boxFixed").style.display = "block";
+        document.querySelector("section.wrap.boxFixed").style.bottom = "-15px";
+        document.querySelector("section.wrap.boxFixed").style.transition =
+          "all 0.3s ease-out";
+      }
+
+      // scroll
+
+      window.addEventListener("scroll", () => {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        let location = document.documentElement.scrollTop;
+        let windowHeight = window.innerHeight;
+        let documentHeight = document.documentElement.scrollHeight;
+        var isScrollAtBottom =
+          window.innerHeight + window.scrollY >= document.body.offsetHeight;
+        const sticky = document.querySelector(".sticky");
+
+        if (scrollTop > 10) {
+          sticky.style.display = "flex";
+        } else {
+          sticky.style.display = "none";
+        }
+      });
+
+      //
+
       const fixedEl = document.querySelector("section.wrap.boxFixed");
       const chkTrigger = fixedEl.classList.contains(".active");
 

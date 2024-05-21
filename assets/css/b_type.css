@@ -17,6 +17,10 @@ main {
   overflow: hidden;
 }
 
+main.b-type-main {
+  font-family: Pretendard;
+}
+
 main nav {
   display: flex;
   justify-content: space-around;
@@ -136,6 +140,8 @@ section.wrap.box02::-webkit-scrollbar {
 
 section.wrap.box02 {
   display: flex;
+  margin-top: -15px;
+  margin-bottom: 15px;
 }
 section.wrap.box02 img {
   max-width: 170px;
@@ -191,7 +197,6 @@ section.wrap.box03 {
 section.wrap.box03 .swiper-planPagi-wrap {
   width: fit-content;
   display: flex;
-  margin-top: 20px;
 }
 
 section.wrap.box03 .swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -199,6 +204,7 @@ section.wrap.box03 .swiper-pagination-bullets.swiper-pagination-horizontal {
   height: auto;
   margin: 0;
   left: auto;
+  bottom: 0;
   display: block;
 }
 
@@ -288,6 +294,10 @@ section.wrap.box03 .plan-wrap span.label {
 .swiper-container.custom .swiper-wrapper .swiper-slide {
   width: 20.938rem;
   height: 100%;
+
+  /* 세로 2줄, 가로 3줄 */
+  width: calc(100% / 3);
+  height: calc(100% / 2);
 }
 
 .swiper-container.custom .swiper-wrapper .swiper-slide img {
@@ -298,9 +308,21 @@ section.wrap.box03 .plan-wrap span.label {
 }
 
 .swiper-container.custom .custom-bullet img {
-  max-width: 98px;
   width: 100%;
-  height: 50px;
+  width: 100%;
+  max-height: 50px;
+  object-fit: contain;
+}
+
+.swiper-container.custom .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  height: 6.25rem; /* 100px로 설정 */
+  width: 100%;
+  margin: 0; /* 추가 */
 }
 
 /* 04 */
@@ -323,6 +345,7 @@ section.wrap.box04 h2.boxtit {
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
+  /*
   bottom: 0;
   top: -4rem;
   height: 6.25rem;
@@ -331,6 +354,28 @@ section.wrap.box04 h2.boxtit {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  height: 6.25rem; 
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 0;*/
+}
+
+.swiper-container.custom.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  display: flex;
+  width: 100%;
+  top: -4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-container.custom.swiper-horizontal
@@ -340,14 +385,27 @@ section.wrap.box04 h2.boxtit {
   font-size: 2.313rem;
   font-weight: 700;
   background: none;
-  width: 100%;
   border: none;
   height: 50px;
+  width: 100px;
+  margin: 0;
 }
-
+.swiper-container.custom .custom-bullet img {
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  object-fit: contain;
+}
 .swiper-container.custom .swiper-wrapper.custom-wrapp {
   padding: 50px 0;
   margin: 75px 0 0;
+}
+
+.swiper-container.custom .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.swiper-container.custom .swiper-pagination-bullet {
+  opacity: 1;
 }
 
 /*05*/
@@ -373,6 +431,7 @@ section.wrap.box05 .cardlist-wrap {
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: space-between;
 }
 section.wrap.box05 .cardlist-wrap.line {
   margin: 21px auto;
@@ -402,35 +461,38 @@ section.wrap.box05 .cardlist-wrap .right .txt-wrap span {
   border-radius: 1rem;
   width: 32px;
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
+
+  padding: 2px 7px 2px 7px;
+  gap: 10px;
+  opacity: 0px;
 }
 
 section.wrap.box05 .cardlist-wrap .right .txt-wrap p {
-  font-family: Pretendard;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 10px;
   letter-spacing: -0.05em;
   text-align: left;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 section.wrap.box05 .cardlist-wrap .right .txt-wrap h3 {
-  margin: 10px 0 6px;
+  margin: 5px 0 6px;
   font-size: 1rem;
   border: none;
   font-family: Pretendard;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 19.2px;
   letter-spacing: -0.05em;
   text-align: left;
 }
 section.wrap.box05 .cardlist-wrap .right img.arrowr {
-  max-width: 10px;
   position: absolute;
   top: 50%;
   right: 0;
+  max-width: 10px;
 }
 section.wrap.box05 .fff.round {
   border-radius: 1rem;
@@ -496,12 +558,56 @@ section.wrap.boxFixed {
   position: fixed;
   bottom: -1rem;
   max-width: 100%;
-  height: 10.125rem;
+  height: 162px;
   margin: 0;
   width: 100%;
   border-radius: 1rem;
   z-index: 999;
+  display: none;
+  transition: all 0.3s ease-out;
 }
+
+.loginwrap {
+  gap: 8px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  position: fixed;
+  bottom: 0;
+  height: 70px;
+  z-index: 9999;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #237cff;
+}
+.loginwrap img {
+  max-width: 199px;
+  margin-top: -4rem;
+}
+.loginwrap p {
+  text-align: center;
+  width: 200px;
+  margin: 0 auto 12px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #237cff;
+  border: 2px solid #237cff;
+  height: 100%;
+  border-radius: 50px;
+  padding: 4px, 20px, 4px, 20px;
+  box-shadow: 2px 2px 16px 0px #00000033;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.8px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  background: #fff;
+}
+/**/
 
 section.wrap.boxFixed .beforewrap.hide {
   display: none;
@@ -551,7 +657,7 @@ section.wrap.boxFixed .beforewrap .prg-pay {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 14px;
+  margin-top: 7px;
   margin-bottom: 35px;
 }
 
@@ -584,7 +690,7 @@ section.wrap.boxFixed .right img {
 }
 /* after triggered */
 section.wrap.boxFixed.active {
-  bottom: -56px;
+  bottom: -56px !important;
   height: 100%;
   overflow-y: auto;
   transition: all 0.3s ease-out;
@@ -838,7 +944,7 @@ progress:after {
 /* benefit */
 .benefit-con {
   /* margin-top: 113.09px;*/
-  padding-bottom: 222px;
+  padding-bottom: 128px;
   color: #fff;
 }
 .benenfit-wrap {
@@ -1007,4 +1113,43 @@ section.wrap.boxFixed .myfare-info .apply-box .right {
 
 .icn-conti {
   max-width: 24px;
+}
+
+/***/
+.sticky {
+  position: fixed;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+  display: none;
+}
+
+.sticky img {
+  max-width: 199px;
+}
+
+@media (max-width: 510px) {
+  .swiper-container.custom.swiper-horizontal
+    > .swiper-pagination-bullets
+    div.custom-bullet,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: 107px;
+  }
+}
+
+@media (max-width: 386px) {
+  .swiper-container.custom.swiper-horizontal
+    > .swiper-pagination-bullets
+    div.custom-bullet,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: 98px;
+  }
 }
