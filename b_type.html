@@ -650,6 +650,9 @@
       function Trglogin() {
         loginwrap.style.display = "none";
         document.querySelector("section.wrap.boxFixed").style.display = "block";
+        document.querySelector("section.wrap.boxFixed").style.bottom = "0";
+        document.querySelector("section.wrap.boxFixed").style.transition =
+          "all 0.3s ease-out";
       }
 
       // scroll

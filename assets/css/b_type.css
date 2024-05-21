@@ -1065,7 +1065,7 @@ section.wrap.boxFixed .myfare-info .apply-box .right {
   width: 100%;
   z-index: 99999;
   position: fixed;
-  top: 66px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9;
