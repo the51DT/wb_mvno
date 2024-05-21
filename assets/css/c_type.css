@@ -1,10 +1,11 @@
 @charset "utf-8";
 
 html.on, body.on {
-  touch-action: pan-x;
+  touch-action: none;
   -webkit-overflow-scrolling: none;
   overflow: hidden;
   overscroll-behavior: none;
+  position: fixed;
 }
 
 img {

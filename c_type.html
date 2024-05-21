@@ -362,12 +362,15 @@
     const indicator = document.querySelector('.indicator')
     const my = document.querySelector('.my')
     const body = document.querySelector('body')
+    let scrollPos = window.pageYOffset
     my_btn.addEventListener('click', ()=>{
       if(after.classList.contains('on')){
         my.style.height = 'calc(100% - 88.25px)'
         my.style.bottom = '0'
         body.style.overflowY = "hidden";
+        scrollPos = window.pageYOffset
         body.classList.add('on')
+        body.style.top = `-${scrollPos}px`
       }
     })
     my_close.addEventListener('click', ()=>{
@@ -375,13 +378,14 @@
       my.style.bottom = '-100px'
       body.style.overflowY = "scroll";
       body.classList.remove('on')
+      window.scrollTo(0, scrollPos)
     })
     indicator.addEventListener('click', ()=>{
       my.style.height = '0'
       my.style.bottom = '-100px'
       body.style.overflowY = "scroll";
       body.classList.remove('on')
-      
+      window.scrollTo(0, scrollPos)
     })
   </script>
 </body>
