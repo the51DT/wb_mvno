@@ -415,7 +415,7 @@
     </div>
 
     <div>
-      <section class="wrap boxFixed">
+      <section class="wrap boxFixed beforefix">
         <!---->
         <div class="wrap">
           <svg
@@ -425,23 +425,18 @@
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             id="btn-trigger-line"
-            onclick="Trigger()"
           >
             <rect width="77" height="5" rx="2.5" fill="#D9D9D9" />
           </svg>
 
-          <div class="top beforewrap">
+          <div class="top beforewrap" onclick="Trigger()">
             <div class="tit-wrap">
               <div class="left">
                 <p class="desc">김우리님 4월 청구요금</p>
                 <p class="num">18,043원</p>
               </div>
               <div class="right">
-                <img
-                  src="./assets/img-b/btn-my.png"
-                  class="btnmy"
-                  onclick="Trigger()"
-                />
+                <img src="./assets/img-b/btn-my.png" class="btnmy" />
               </div>
             </div>
 
@@ -476,7 +471,7 @@
 
           <!-- actived -->
           <div class="activedwrap">
-            <div class="imgwrap">
+            <div class="imgwrap" onclick="Trigger()">
               <img
                 src="./assets/img-b/img-greeting-active.png"
                 style="max-width: 130px; padding: 15px 0 32px"
@@ -785,7 +780,7 @@
         } else if (scrollTop < lastScrollTop) {
           // 스크롤 올릴 때
           btmWrap.style.display = "block";
-          sticky.style.display = "none";
+          sticky.style.display = "block";
         }
 
         if (scrollTop === 0) {
@@ -848,20 +843,20 @@
         }
       }
 
-      function handleScroll() {
-        // 스크롤 위치 가져오기
-        var scrollPosition = window.scrollY;
-        const addH = document.querySelector(".boxFixed");
-        const sticky = document.querySelector(".sticky");
+      // function handleScroll() {
+      //   // 스크롤 위치 가져오기
+      //   var scrollPosition = window.scrollY;
+      //   const addH = document.querySelector(".boxFixed");
+      //   const sticky = document.querySelector(".sticky");
 
-        // 스크롤 위치에 따라 요소의 표시 여부 결정
-        if (scrollPosition > 0) {
-          sticky.classList.remove("hidden");
-        } else {
-          addH.style.display = "none";
-        }
-      }
-      window.addEventListener("scroll", handleScroll);
+      //   // 스크롤 위치에 따라 요소의 표시 여부 결정
+      //   if (scrollPosition > 0) {
+      //     sticky.classList.remove("hidden");
+      //   } else {
+      //     addH.style.display = "none";
+      //   }
+      // }
+      // window.addEventListener("scroll", handleScroll);
     </script>
   </body>
 </html>
