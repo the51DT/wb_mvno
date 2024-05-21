@@ -865,7 +865,7 @@ section.wrap.boxFixed .myplan .inner .box .right .btm {
 
 .activeswiper.swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-  width: 1.813rem;
+  width: auto;
   bottom: 0;
   margin-left: 1.25rem;
   margin-bottom: 1.875rem;

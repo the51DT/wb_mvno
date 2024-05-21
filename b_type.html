@@ -255,7 +255,7 @@
               <div class="swiper-pagination"></div>
               <div class="swiper-wrapper custom-wrapp">
                 <div class="swiper-slide">
-                  <img src="./assets/img-b/icn-flex.png" />
+                  <img src="./assets/img-b/img-flex.png" />
                 </div>
                 <div class="swiper-slide"></div>
                 <div class="swiper-slide">
@@ -658,6 +658,7 @@
           },
         },
       });
+
       //
 
       // 바텀시트 최하단 스와이퍼
@@ -682,15 +683,9 @@
       }
 
       // scroll
-
       window.addEventListener("scroll", () => {
         let scrollTop =
           window.pageYOffset || document.documentElement.scrollTop;
-        let location = document.documentElement.scrollTop;
-        let windowHeight = window.innerHeight;
-        let documentHeight = document.documentElement.scrollHeight;
-        var isScrollAtBottom =
-          window.innerHeight + window.scrollY >= document.body.offsetHeight;
         const sticky = document.querySelector(".sticky");
 
         if (scrollTop > 10) {
