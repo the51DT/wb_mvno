@@ -17,6 +17,10 @@ main {
   overflow: hidden;
 }
 
+main.b-type-main {
+  font-family: Pretendard;
+}
+
 main nav {
   display: flex;
   justify-content: space-around;
@@ -1122,4 +1126,22 @@ section.wrap.boxFixed .myfare-info .apply-box .right {
 
 .sticky img {
   max-width: 199px;
+}
+
+@media (max-width: 510px) {
+  .swiper-container.custom.swiper-horizontal
+    > .swiper-pagination-bullets
+    div.custom-bullet,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: 107px;
+  }
+}
+
+@media (max-width: 386px) {
+  .swiper-container.custom.swiper-horizontal
+    > .swiper-pagination-bullets
+    div.custom-bullet,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: 98px;
+  }
 }
