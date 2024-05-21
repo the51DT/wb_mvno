@@ -147,7 +147,6 @@ section.wrap.box02 img:last-child {
 }
 section.wrap.box02 div.lastwrapper {
   display: flex;
-  width: 200px;
   align-items: center;
   justify-content: center;
   margin-left: 10px;
