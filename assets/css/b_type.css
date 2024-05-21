@@ -659,6 +659,9 @@ section.wrap.boxFixed .myplan .inner .right {
 section.wrap.boxFixed .myplan .inner .right .top h3 {
   font-size: 13px;
 }
+section.wrap.boxFixed .myplan .inner .right .top h3.plan-title {
+  width: 61px;
+}
 section.wrap.boxFixed .myplan .inner .box {
   margin: 0 0 14px;
 }
