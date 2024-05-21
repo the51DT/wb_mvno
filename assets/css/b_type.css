@@ -514,7 +514,7 @@ section.wrap.boxFixed {
   opacity: 0px;
   position: fixed;
   bottom: 0;
-  height: 50px;
+  height: 70px;
   z-index: 9999;
   width: 100%;
   display: flex;
@@ -524,7 +524,7 @@ section.wrap.boxFixed {
 }
 .loginwrap img {
   max-width: 199px;
-  margin-top: -3rem;
+  margin-top: -4rem;
 }
 .loginwrap p {
   text-align: center;
