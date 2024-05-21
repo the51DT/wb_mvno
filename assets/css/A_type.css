@@ -5,7 +5,7 @@ body::-webkit-scrollbar {
 html.on, body.on {
   touch-action: none;
   -webkit-overflow-scrolling: none;
-  overflow: hideen;
+  overflow: hidden;
   overscroll-behavior: none;
 }
 

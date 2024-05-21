@@ -1,9 +1,9 @@
 @charset "utf-8";
 
 html.on, body.on {
-  touch-action: none;
+  touch-action: pan-x;
   -webkit-overflow-scrolling: none;
-  overflow: hideen;
+  overflow: hidden;
   overscroll-behavior: none;
 }
 
