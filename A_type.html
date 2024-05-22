@@ -15,15 +15,6 @@
         <img src="./assets/images/A_type/logo.png" alt="" class="logo" />
         <img src="./assets/images/A_type/icon_menu.png" alt="" class="menu" />
       </header>
-      <header id="header2" class="show" style="display: none">
-        <img src="./assets/images/A_type/logo.png" alt="" class="logo" />
-        <img src="./assets/images/A_type/icon_menu.png" alt="" class="menu" />
-      </header>
-      <header id="header3" class="show2" style="display: none">
-        <img src="./assets/images/A_type/logo.png" alt="" class="logo" />
-        <img src="./assets/images/A_type/icon_menu.png" alt="" class="menu" />
-      </header>
-
       <div class="alarm-box">
         <div class="alarm-title">
           <img src="./assets/images/A_type/alarm.png" alt="" class="alarm" />
@@ -152,7 +143,6 @@
               예비 데이터 전환
             </p>
           </div>
-          <span class="blind"></span>
         </div>
       </div>
     </div>
@@ -278,12 +268,6 @@
     </a>
     <div class="modalBox" id="modal">
       <div class="small-cirlce">
-        <!-- <img src="./assets/images/A_type/modal_eachbtn.png" alt="" class="w444" /> -->
-        <!-- <img src="./assets/images/A_type/modal_1.png" alt="" class="modal_logo modal_logo1" />
-        <img src="./assets/images/A_type/modal_2.png" alt="" class="modal_logo modal_logo2" />
-        <img src="./assets/images/A_type/modal_3.png" alt="" class="modal_logo modal_logo3" />
-        <img src="./assets/images/A_type/modal_4.png" alt="" class="modal_logo modal_logo4" />
-        <img src="./assets/images/A_type/modal_5.png" alt="" class="modal_logo modal_logo5" /> -->
         <img src="./assets/images/A_type/3.png" alt="" class="modal_logo modal_logo1" />
         <img src="./assets/images/A_type/2.png" alt="" class="modal_logo modal_logo2" />
         <img src="./assets/images/A_type/1.png" alt="" class="modal_logo modal_logo3" />
@@ -291,7 +275,6 @@
         <img src="./assets/images/A_type/5.png" alt="" class="modal_logo modal_logo5" />
         <img src="./assets/images/A_type/bg_3.png" alt="" class="modal_bg" />
         <div class="modal-close"></div>
-        <!-- <img src="./assets/images/A_type/ion_close-outline.png" alt="" class="modal-close" /> -->
       </div>
     </div>
     <div class="dimmed"></div>
@@ -302,7 +285,6 @@
   <script>
     // 바텀시트 클릭 시 active
     const toggleElements = document.querySelectorAll(".fix-btm");
-    const alarmBox = document.querySelector(".alarm-box");
 
     toggleElements.forEach((button) => {
       button.addEventListener("click", () => {
@@ -320,13 +302,9 @@
           document.body.classList.remove("on");
           bg.classList.remove("on");
           if (top2 === 0) {
-            header3.style.display = "none";
-            header2.style.display = "none";
             header1.style.display = "flex";
           } else {
-            header3.style.display = "none";
             header1.style.display = "none";
-            header2.style.display = "flex";
           }
         } else {
           fixBtm.style.display = "none";
@@ -338,8 +316,6 @@
           }, 500);
           document.body.style.overflowY = "hidden";
           document.body.classList.add("on");
-          header2.style.display = "none";
-          header3.style.display = "flex";
         }
         // 클릭 후 다시 요소 선택
         const newToggleElements = document.querySelectorAll(".btm__wrap.full .fix-btm-active .btm-tit");
@@ -350,7 +326,6 @@
             const fixBtmActive = document.querySelector(".fix-btm-active");
             const btmWrap = document.querySelector(".btm__wrap");
             const bg = document.querySelector(".btm__wrap_bg");
-            let top2 = document.documentElement.scrollTop;
 
             if (fixBtm.style.display === "none") {
               fixBtm.style.display = "block";
@@ -367,20 +342,13 @@
 
     // 스크롤 이벤트 처리
     let lastScrollTop = 0;
-    const header = document.querySelector("header");
     const header1 = document.getElementById("header1");
-    // const header2 = document.getElementById("header2");
-    // const header3 = document.getElementById("header3");
     const wrap = document.getElementById("wrap");
-    const headerLogo = document.querySelector("header .logo");
-    const headerMenu = document.querySelector("header .menu");
     const btmWrap = document.querySelector(".btm__wrap");
     const fixBtmActive2 = document.querySelector(".fix-btm-active");
     const newBeeBtn = document.querySelector(".scroll-case");
-    const blind = document.querySelector(".blind");
     const box4 = document.querySelector(".benefits-box.box4");
     const box2 = document.querySelector(".benefits-box.box2");
-    const box1 = document.querySelector(".benefits-box.box1");
     let scrollBefore = document.documentElement.scrollHeight;
     let scrollTimeout;
 
@@ -389,38 +357,31 @@
       let location = document.documentElement.scrollTop;
       let windowHeight = window.innerHeight;
       let documentHeight = document.documentElement.scrollHeight;
-      var isScrollAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+      let isScrollAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
       if (scrollTop > lastScrollTop) {
         // 스크롤 내릴 때
         btmWrap.style.display = "none";
-        // header2.style.display = "none";
-        // header3.style.display = "none";
         header1.style.display = "none";
         newBeeBtn.classList.remove("on");
       } else if (scrollTop < lastScrollTop) {
         // 스크롤 올릴 때
         btmWrap.style.display = "block";
-        // header3.style.display = "none";
-        // header2.style.display = "flex";
         header1.style.display = "flex";
-        // header1.classList.add("on");
         newBeeBtn.classList.add("on");
       }
 
       if (scrollTop === 0) {
         header1.style.display = "flex";
-        header2.style.display = "none";
-        header3.style.display = "none";
         newBeeBtn.classList.remove("on");
       }
 
+      // 스크롤이 맨 아래에 도달했을 때 (박스 4, 박스2 위치쪽에 도달했을 때)
       if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop || location >= box2.offsetTop) {
-        // 스크롤이 맨 아래에 도달했을 때
         btmWrap.style.display = "block";
       }
 
-      // 스크롤 멈춤 감지
+      // 스크롤 멈춤 감지 (스크롤이 맨 아래에 도달했을 때 안먹혔을 때를 위해)
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight || location >= box4.offsetTop || location >= box2.offsetTop) {
@@ -431,6 +392,7 @@
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
+    // 모달
     const modal = document.getElementById("modal");
     const dimmed = document.querySelector(".dimmed");
     const modalClose = document.querySelector(".modal-close");
