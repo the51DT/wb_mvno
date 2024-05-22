@@ -2,7 +2,8 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-html.on, body.on {
+html.on,
+body.on {
   touch-action: none;
   -webkit-overflow-scrolling: none;
   overflow: hidden;
@@ -23,19 +24,31 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 0 12.74px 0;
   background-color: #2865da;
-  position: relative;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  z-index: 30;
 }
 header .logo {
   max-width: 68px;
 }
-
+/* #header1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 56px;
+  display: flex;
+  width: 100%;
+  padding: 0 20px;
+} */
 header .menu {
   max-width: 20px;
 }
-header.show {
+/* header.show {
   background-color: #2865da;
   width: 100%;
   position: fixed;
@@ -51,7 +64,7 @@ header.show2 {
   left: 0;
   padding: 12px 20px 12.74px;
   z-index: 20;
-}
+} */
 .alarm-box {
   padding: 10.29px 21.27px 10.29px 18px;
   background-color: #0028a1;
@@ -59,7 +72,7 @@ header.show2 {
   justify-content: space-between;
   align-items: center;
   border-radius: 28px;
-  margin: 10px 0 40px;
+  margin: 66px 0 40px;
   height: 48px;
   position: relative;
   top: 0;
