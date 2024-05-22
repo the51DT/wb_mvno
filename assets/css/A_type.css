@@ -7,6 +7,7 @@ html.on, body.on {
   -webkit-overflow-scrolling: none;
   overflow: hidden;
   overscroll-behavior: none;
+  height: 100vh;
 }
 
 #wrap {
